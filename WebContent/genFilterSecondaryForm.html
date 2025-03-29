@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>genFilterPrimaryForm.html</title>
+<title>genFilterSecondaryForm.html</title>
 <link rel="stylesheet" type="text/css" href="css/gen-filter.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
@@ -92,6 +92,23 @@
 		    <button type="button" class="btn" id="search-btn">시터 찾기</button>
 	    </form>
 	</div>
+	
+	<!-- (side) 일반 돌봄 2차 필터 -->
+	<div class="secondary-filter" id="secondary-filter">
+	    <h2>2차 필터</h2>
+	    <form id="secondary-filter-form">
+		    <div class="form-group">시터 등급</div>
+			<div class="form-group">근무 지역</div>		<!-- 시터가 등록한 선호 근무 지역 기반 -->
+			<div class="form-group">시터 성별</div>
+			<div class="form-group">시터 연령대</div>
+			<div class="form-group">시터 보유 자격증</div>
+			<div class="form-group">전체 돌봄 비용</div>
+			
+		
+			<button type="button" class="btn" id="apply-filter-btn">필터 적용</button>
+		</form>
+	</div>
+	
 </div>
 
 </body>
