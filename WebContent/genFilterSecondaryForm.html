@@ -9,7 +9,7 @@
 
     // 페이지가 로드되면 memberMainFrame.html을 불러오기
     $(document).ready(function() {
-  		$.get('memberMainFrame.html', function(data) {
+  		$.get('./memberMainFrame.html', function(data) {
     		$('#header-container').html(data);  // #header-container에 HTML 삽입
   		});
 	});
@@ -97,12 +97,161 @@
 	<div class="secondary-filter" id="secondary-filter">
 	    <h2>2차 필터</h2>
 	    <form id="secondary-filter-form">
-		    <div class="form-group">시터 등급</div>
-			<div class="form-group">근무 지역</div>		<!-- 시터가 등록한 선호 근무 지역 기반 -->
-			<div class="form-group">시터 성별</div>
-			<div class="form-group">시터 연령대</div>
-			<div class="form-group">시터 보유 자격증</div>
-			<div class="form-group">전체 돌봄 비용</div>
+		    <div class="form-group">
+		    	<label>시터 등급</label>
+		        <div class="checkbox-group">
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="grade" value="rookie" checked="checked">신입
+		            </label>
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="grade" value="bronze" checked="checked">브론즈
+		            </label>
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="grade" value="silver" checked="checked">실버
+		            </label>
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="grade" value="gold" checked="checked">골드
+		            </label>
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="grade" value="platinum" checked="checked">플래티넘
+		            </label>
+		        </div>
+		    </div>
+		    
+			<div class="form-group">
+				<label>근무 지역</label>	<!-- 시터가 등록한 선호 근무 지역 기반 -->
+				<div class="checkbox-group">
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="region" value="1" checked="checked">강남구  
+		            </label>                                                                  
+		            <label class="checkbox-label">                                            
+		                <input type="checkbox" name="region" value="2" checked="checked">강동구  
+		            </label>                                                                  
+		            <label class="checkbox-label">                                            
+		                <input type="checkbox" name="region" value="3" checked="checked">강북구  
+		            </label>                                                                  
+		            <label class="checkbox-label">                                            
+		                <input type="checkbox" name="region" value="4" checked="checked">강서구  
+		            </label>                                                                  
+		            <label class="checkbox-label">                                            
+		                <input type="checkbox" name="region" value="5" checked="checked">관악구  
+		            </label>                                                                  
+		            <label class="checkbox-label">                                            
+		                <input type="checkbox" name="region" value="6" checked="checked">광진구  
+		            </label>                                                                  
+		            <label class="checkbox-label">                                            
+		                <input type="checkbox" name="region" value="7" checked="checked">구로구  
+		            </label>                                                                  
+		            <label class="checkbox-label">                                            
+		                <input type="checkbox" name="region" value="8" checked="checked">금천구  
+		            </label>                                                                  
+		            <label class="checkbox-label">                                            
+		                <input type="checkbox" name="region" value="9" checked="checked">노원구  
+		            </label>                                                                  
+		            <label class="checkbox-label">                                            
+		                <input type="checkbox" name="region" value="10" checked="checked">도봉구  
+		            </label>                                                                  
+		            <label class="checkbox-label">                                            
+		                <input type="checkbox" name="region" value="11" checked="checked">동대문구 
+		            </label>                                                                   
+		            <label class="checkbox-label">                                             
+		                <input type="checkbox" name="region" value="12" checked="checked">동작구  
+		            </label>                                                                   
+		            <label class="checkbox-label">                                             
+		                <input type="checkbox" name="region" value="13" checked="checked">마포구  
+		            </label>                                                                   
+		            <label class="checkbox-label">                                             
+		                <input type="checkbox" name="region" value="14" checked="checked">서대문구 
+		            </label>                                                                   
+		            <label class="checkbox-label">                                             
+		                <input type="checkbox" name="region" value="15" checked="checked">서초구  
+		            </label>                                                                   
+		            <label class="checkbox-label">                                             
+		                <input type="checkbox" name="region" value="16" checked="checked">성동구  
+		            </label>                                                                   
+		            <label class="checkbox-label">                                             
+		                <input type="checkbox" name="region" value="17" checked="checked">성북구  
+		            </label>                                                                   
+		            <label class="checkbox-label">                                             
+		                <input type="checkbox" name="region" value="18" checked="checked">송파구  
+		            </label>                                                                   
+		            <label class="checkbox-label">                                             
+		                <input type="checkbox" name="region" value="19" checked="checked">양천구  
+		            </label>                                                                   
+		            <label class="checkbox-label">                                             
+		                <input type="checkbox" name="region" value="20" checked="checked">영등포구 
+		            </label>                                                                  
+		            <label class="checkbox-label">                                            
+		                <input type="checkbox" name="region" value="21" checked="checked">용산구  
+		            </label>                                                                   
+		            <label class="checkbox-label">                                             
+		                <input type="checkbox" name="region" value="22" checked="checked">은평구  
+		            </label>                                                                   
+		            <label class="checkbox-label">                                             
+		                <input type="checkbox" name="region" value="23" checked="checked">종로구  
+		            </label>                                                                   
+		            <label class="checkbox-label">                                             
+		                <input type="checkbox" name="region" value="24" checked="checked">중구   
+		            </label>                                          
+		            <label class="checkbox-label">                                             
+		                <input type="checkbox" name="region" value="25" checked="checked">중랑구   
+		            </label>
+		        </div>                                                            
+			</div>                                                                          
+			<div class="form-group">
+				<label>시터 성별</label>
+				<div class="checkbox-group">
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="gender" value="male" checked="checked">남성
+		            </label>
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="gender" value="female" checked="checked">여성
+		            </label>
+		        </div>
+			</div>
+			<div class="form-group">
+				<label>시터 연령대</label>
+				<div class="checkbox-group">
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="age" value="20" checked="checked">20대
+		            </label>
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="age" value="30" checked="checked">30대
+		            </label>
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="age" value="40" checked="checked">40대
+		            </label>
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="age" value="50" checked="checked">50대
+		            </label>
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="age" value="60" checked="checked">60대 이상
+		            </label>
+		        </div>
+			</div>
+			<div class="form-group">
+				<label>시터 보유 자격증</label>
+				<div class="checkbox-group">
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="cert" value="1" checked="checked">보육 교사 1급 (특수 보육 과정 이수자)
+		            </label>
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="cert" value="2" checked="checked">보육 교사 1급 (특수 보육 과정 미이수자)
+		            </label>
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="cert" value="3" checked="checked">보육 교사 2급 (특수 보육 과정 이수자)
+		            </label>
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="cert" value="4" checked="checked">보육 교사 2급 (특수 보육 과정 미이수자)
+		            </label>
+		            <label class="checkbox-label">
+		                <input type="checkbox" name="cert" value="5" checked="checked">특수 교사 자격증
+		            </label>
+		        </div>
+			</div>
+			<div class="form-group">
+				<label>전체 돌봄 비용</label>
+			</div>
 			
 		
 			<button type="button" class="btn" id="apply-filter-btn">필터 적용</button>

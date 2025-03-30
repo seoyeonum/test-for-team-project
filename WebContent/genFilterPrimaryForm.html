@@ -9,11 +9,11 @@
 
     // 페이지가 로드되면 memberMainFrame.html을 불러오기
     $(document).ready(function() {
-  		$.get('memberMainFrame.html', function(data) {
+  		$.get('./memberMainFrame.html', function(data) {
     		$('#header-container').html(data);  // #header-container에 HTML 삽입
   		});
 	});
-    
+
 </script>
 </head>
 <body>

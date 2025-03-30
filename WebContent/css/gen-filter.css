@@ -98,7 +98,6 @@ h2
 .form-group
 {
     margin-bottom: 15px;
-    font-size: 18px;
 }
 
 label
@@ -176,4 +175,38 @@ input, select
 .btn:hover
 {
     background-color: #febdb4;
+}
+
+/* 2차 필터 */
+.secondary-filter
+{
+    width: 280px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 0 #e5e5e5;
+    height: fit-content;				/* 내용물에 맞춰 높이 설정 */
+    position: sticky;					/* top: 20px 이후부터 고정 */
+    top: 20px;
+    /* display: none; 기본적으로 숨겨져 있음 */
+}
+
+.checkbox-group
+{
+    margin-bottom: 10px;
+}
+
+.checkbox-label
+{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.checkbox-label input
+{
+    width: auto;
 }
