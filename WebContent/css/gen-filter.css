@@ -220,7 +220,12 @@ input, select
     width: auto;
 }
 
-.range
+.range-group
+{
+    margin-bottom: 10px;
+}
+
+.range-label
 {
 	display: flex;
 	justify-content: space-between;			/* 요소를 양 끝에 두고 간격 동일 */

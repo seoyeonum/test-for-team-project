@@ -7,11 +7,45 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
 
-    // 페이지가 로드되면 memberMainFrame.html을 불러오기
+    // 페이지가 로드되면
     $(document).ready(function() {
+    	
+    	// memberMainFrame.html을 불러오기
   		$.get('./memberMainFrame.html', function(data) {
     		$('#header-container').html(data);  // #header-container에 HTML 삽입
   		});
+  		
+  		// 토글 처리 - 시터 등급
+  		$("#toggle-grade").click(function() {
+        	//$("#checkbox-grade").toggle();			// 일반 토글 모션 처리
+  			$("#checkbox-grade").slideToggle(500);		// 부드러운 토글 모션 처리 (괄호는 밀리초 단위 처리 속도)
+    	});
+  		
+  		// 토글 처리 - 시터 근무 선호 지역
+  		$("#toggle-region").click(function() {
+        	$("#checkbox-region").slideToggle(750);
+    	});
+  		
+  		// 토글 처리 - 시터 성별 
+  		$("#toggle-gender").click(function() {
+        	$("#checkbox-gender").slideToggle(500);
+    	});
+  		
+  		// 토글 처리 - 시터 연령대 
+  		$("#toggle-age").click(function() {
+        	$("#checkbox-age").slideToggle(500);
+    	});
+  	
+  		// 토글 처리 - 시터 보유 자격증 
+  		$("#toggle-cert").click(function() {
+        	$("#checkbox-cert").slideToggle(500);
+    	});
+  		
+  		// 토글 처리 - 전체 돌봄 비용
+  		$("#toggle-price").click(function() {
+        	$("#range-price").slideToggle(500);
+    	});
+  		
 	});
   
 </script>
@@ -102,8 +136,8 @@
 		    <h2>2차 필터</h2>
 		    <form id="secondary-filter-form">
 			    <div class="form-group">
-			    	<label>시터 등급</label>
-			        <div class="checkbox-group">
+			    	<label id="toggle-grade">시터 등급</label>
+			        <div class="checkbox-group" id="checkbox-grade">
 			            <label class="checkbox-label">
 			                <input type="checkbox" name="grade" value="rookie" checked="checked">신입
 			            </label>
@@ -123,8 +157,8 @@
 			    </div>
 			    
 				<div class="form-group">
-					<label>근무 지역</label>	<!-- 시터가 등록한 선호 근무 지역 기반 -->
-					<div class="checkbox-group">
+					<label id="toggle-region">근무 지역</label>	<!-- 시터가 등록한 선호 근무 지역 기반 -->
+					<div class="checkbox-group"  id="checkbox-region">
 			            <label class="checkbox-label">
 			                <input type="checkbox" name="region" value="1" checked="checked">강남구  
 			            </label>                                                                  
@@ -203,8 +237,8 @@
 			        </div>                                                            
 				</div>                                                                          
 				<div class="form-group">
-					<label>시터 성별</label>
-					<div class="checkbox-group">
+					<label id="toggle-gender">시터 성별</label>
+					<div class="checkbox-group" id="checkbox-gender">
 			            <label class="checkbox-label">
 			                <input type="checkbox" name="gender" value="male" checked="checked">남성
 			            </label>
@@ -214,8 +248,8 @@
 			        </div>
 				</div>
 				<div class="form-group">
-					<label>시터 연령대</label>
-					<div class="checkbox-group">
+					<label id="toggle-age">시터 연령대</label>
+					<div class="checkbox-group" id="checkbox-age">
 			            <label class="checkbox-label">
 			                <input type="checkbox" name="age" value="20" checked="checked">20대
 			            </label>
@@ -234,8 +268,8 @@
 			        </div>
 				</div>
 				<div class="form-group">
-					<label>시터 보유 자격증</label>
-					<div class="checkbox-group">
+					<label id="toggle-cert">시터 보유 자격증</label>
+					<div class="checkbox-group" id="checkbox-cert">
 			            <label class="checkbox-label">
 			                <input type="checkbox" name="cert" value="1" checked="checked">보육 교사 1급 (특수)
 			            </label>
@@ -254,12 +288,16 @@
 			        </div>
 				</div>
 				<div class="form-group">
-					<label>전체 돌봄 비용</label>
-					<input type="range" name="total-price" min="0" max="4100000" step="10000" value="1340000">
-			        <div class="range">
-			            <span>0원</span>
-			            <span id="current-price">1,340,000원</span>
-			            <span>1,400,000원</span>
+					<label id="toggle-price">전체 돌봄 비용</label>
+			        <div class="range-group" id="range-price">
+			        	<label class="range-label">
+							<input type="range" name="price" min="0" max="41092240" step="10000" value="1340000">
+						</label>
+						<label class="range-label">
+				            <span>0원</span>
+				            <span id="current-price">1,340,000원</span>
+				            <span>4,092,240원</span>
+			            </label>
 			        </div>
 				</div>
 	
