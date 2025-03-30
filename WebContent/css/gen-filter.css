@@ -18,7 +18,7 @@
     font-family: 'NoonnuBasicGothicRegular';
 }
 
-#wrapper
+#body-container
 {
     display: flex;
     justify-content: center;
@@ -77,7 +77,7 @@ h1
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px ;
-    box-shadow: 0 2px 0 #e5e5e5;		/* 그림자 속성: (수평) (수직) (블러) (색상) */
+    box-shadow: 2px 2px 0 #e5e5e5;		/* 그림자 속성: (수평) (수직) (블러) (색상) */
 }
 
 h2
@@ -184,7 +184,8 @@ input, select
     background: white;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 2px 0 #e5e5e5;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 0 #e5e5e5;
     height: fit-content;				/* 내용물에 맞춰 높이 설정 */
     position: sticky;					/* top: 20px 이후부터 고정 */
     top: 20px;
@@ -209,4 +210,14 @@ input, select
 .checkbox-label input
 {
     width: auto;
+}
+
+.range
+{
+	display: flex;
+	justify-content: space-between;			/* 요소를 양 끝에 두고 간격 동일 */
+    margin-top: 5px;
+    font-size: 16px;
+    color: #333;
+    width: 100%;
 }
