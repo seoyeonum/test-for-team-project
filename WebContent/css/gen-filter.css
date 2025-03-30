@@ -180,6 +180,11 @@ input, select
     background-color: #febdb4;
 }
 
+.btn-small
+{
+	font-size: 12px;
+}
+
 /* 2차 필터 */
 .secondary-filter
 {
@@ -276,6 +281,7 @@ input, select
 
 .sitter-name
 {
+	display: flex;
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 5px;
@@ -297,4 +303,29 @@ input, select
     font-size: 14px;
     color: #333;
     white-space: nowrap;
+}
+
+/* 뱃지 형태의 정보 표시 */
+.badge
+{
+    display: flex;
+    background-color: #dcb9ff;
+    color: #560d7d;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.male
+{
+	background-color: #aad5ff;
+    color: #1f6c96;
+}
+
+.female
+{
+	background-color: #febdb4;
+    color: #d9534f;
 }
