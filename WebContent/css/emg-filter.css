@@ -24,7 +24,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 25px 10px;						/* 첫 번째 값은 수직 간격, 두 번째 값은 수평 간격 */
+    gap: 0 10px;						/* 첫 번째 값은 수직 간격, 두 번째 값은 수평 간격 */
 }
 
 body
@@ -38,6 +38,10 @@ body
 {
 	margin-right: 1000px; 				   /* 기본적으로 우측에 1000px 간격 */
 }
+.sub-subject h2
+{
+	margin-right: 900px; 				   /* 기본적으로 우측에 900px 간격 */
+}
 
 /* 반응형 디자인 구현 --------------------------------------------------------- */
 @media (max-width: 1280px)
@@ -45,6 +49,10 @@ body
 	.main-subject h1
 	{
 		margin-right: calc(100vw * 0.8);  /* 화면이 1280px 이하로 줄어들면 우측 간격을 80%로 설정 */
+	}
+	.sub-subject h2
+	{
+		margin-right: calc(100vw * 0.75);  /* 화면이 1280px 이하로 줄어들면 우측 간격을 75%로 설정 */
 	}
 }
 
@@ -54,10 +62,18 @@ body
 	{
 		margin-right: calc(100vw * 0.7);  /* 화면이 960px 이하로 줄어들면 우측 간격을 70%로 설정 */
 	}
+	.sub-subject h2
+	{
+		margin-right: calc(100vw * 0.65);  /* 화면이 960px 이하로 줄어들면 우측 간격을 65%로 설정 */
+	}
 }
 @media (max-width: 640px)
 {
 	.main-subject h1
+	{
+		margin-right: 0;  /* 화면이 640px 이하로 줄어들면 우측 간격을 0로 설정 */
+	}
+	.sub-subject h2
 	{
 		margin-right: 0;  /* 화면이 640px 이하로 줄어들면 우측 간격을 0로 설정 */
 	}
@@ -74,7 +90,7 @@ h1
 h2
 {
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     color: #333;
     white-space: nowrap;
     padding: 10px;
@@ -111,12 +127,11 @@ h2
 
 #wrapper-body
 {
-	display: inline;
+	display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: row;
-    gap: 20px 20px;
-    /* width: 950px; */
+    align-items: center;
+    flex-direction: column;
+    /* gap: 20px 20px; */
 }
 
 /* 검색 결과 */
@@ -126,6 +141,7 @@ h2
 	flex: 1;
 	gap: 10px 10px;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 /* 긴급 돌봄 각 등록 건 */
@@ -139,7 +155,7 @@ h2
     gap: 20px;
     box-shadow: 2px 2px 0 #e5e5e5;
     position: relative;
-    width: 310px;
+    width: 350px;
     height: 350px;
 }
 

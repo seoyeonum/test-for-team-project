@@ -39,9 +39,13 @@
 	
 	<!-- 부모의 긴급 돌봄 요청 표시 -->
 	<div id="wrapper-body">
-        <h2>긴급 돌봄 요청 리스트 <span id="result-count">(3)</span></h2>
+		<div class="sub-subject">
+	        <h2>긴급 돌봄 요청 리스트 <span id="result-count">(3)</span></h2>
+		</div>
 		<div class="results" id="results">
 	        
+	        <% for (int i=0; i<10; i++)
+	        {%>
 	        <!-- 긴급 돌봄 각 등록 건 1 -->
 	        <div class="emg-registered">
 	            <div class="emg-info">
@@ -169,7 +173,9 @@
 	                <button type="button" class="btn btn-small" id="gen-details">지원하기</button>
                 </div>
             </div>
-            
+            <%
+            }
+	        %>
         </div>
 		
     </div>
