@@ -47,6 +47,7 @@ body
 		margin-right: calc(100vw * 0.8);  /* 화면이 1280px 이하로 줄어들면 우측 간격을 80%로 설정 */
 	}
 }
+
 @media (max-width: 960px)
 {
 	.main-subject h1
@@ -70,17 +71,6 @@ h1
 	white-space: nowrap; 				/* 텍스트가 줄 바꿈 없이 한 줄로 유지 */
 }
 
-/* 1차 필터 */
-.filter-box
-{
-	background: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px ;
-    box-shadow: 2px 2px 0 #e5e5e5;		/* 그림자 속성: (수평) (수직) (블러) (색상) */
-    
-}
-
 h2
 {
     font-size: 20px;
@@ -89,77 +79,6 @@ h2
     white-space: nowrap;
     padding: 10px;
 }
-
-#primary-filter-form
-{
-	display: flex;
-	gap: 20px;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-
-.form-group
-{
-    margin-bottom: 15px;
-    padding: 10px;
-}
-
-label
-{
-    display: block;
-    margin-bottom: 8px;
-    font-size: 18px;
-    white-space: nowrap;
-}
-
-input, select
-{
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-/* 돌봄 희망 날짜 */
-.date-range
-{
-    display: flex;
-    gap: 10px;
-    white-space: nowrap;
-    margin-bottom: 8px;
-}
-
-.date-range input
-{
-    flex: 1;
-    width: 152px;
-}
-
-/* 돌봄 희망 시간 */
-.time-range
-{
-    display: flex;
-    gap: 10px;
-    white-space: nowrap;
-    margin-bottom: 8px;
-}
-
-.time-range select
-{
-    flex: 1;
-    width: 112px;
-}
-
-/* 시간 설정 경고 문구 */
-.warning
-{
-    color: #d9534f;
-    font-size: 14px;
-    margin-top: 5px;
-    display: inline;					/* 기본 none 으로 설정 바꾸어야 함! */
-}
-
 
 /* 버튼 */
 .btn
@@ -184,90 +103,33 @@ input, select
 .btn-small
 {
 	font-size: 12px;
+	position: absolute;
+    bottom: 10px;
+    right: 20px;
 }
 
-/* 시터 이름으로 검색 폼 */
-
-#sitter-name-filter-form
-{
-	display: flex;
-	gap: 20px;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-
-
-
-
-
-/* 2차 필터 */
-.secondary-filter
-{
-    width: 280px;
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 2px 2px 0 #e5e5e5;
-    height: fit-content;				/* 내용물에 맞춰 높이 설정 */
-    position: sticky;					/* top: 20px 이후부터 고정 */
-    top: 20px;
-    /* display: none; 기본적으로 숨겨져 있음 */
-}
-
-.checkbox-group
-{
-    margin-bottom: 10px;
-}
-
-.checkbox-label
-{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.checkbox-label input
-{
-    width: auto;
-}
-
-.range-group
-{
-    margin-bottom: 10px;
-}
-
-.range-label
-{
-	display: flex;
-	justify-content: space-between;			/* 요소를 양 끝에 두고 간격 동일 */
-    margin-top: 5px;
-    font-size: 16px;
-    color: #333;
-    width: 100%;
-}
 
 #wrapper-body
 {
-	display: flex;
+	display: inline;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: row;
-    gap: 20px 20px;	
-    width: 80%;
+    gap: 20px 20px;
+    /* width: 950px; */
 }
 
 /* 검색 결과 */
-.results-container
+.results
 {
+	display: flex;
 	flex: 1;
+	gap: 10px 10px;
+	flex-wrap: wrap;
 }
 
-/* 일반 돌봄 각 등록 건 */
-.gen-registered
+/* 긴급 돌봄 각 등록 건 */
+.emg-registered
 {
     background: white;
     border-radius: 10px;
@@ -276,31 +138,19 @@ input, select
     display: flex;
     gap: 20px;
     box-shadow: 2px 2px 0 #e5e5e5;
+    position: relative;
+    width: 310px;
+    height: 350px;
 }
 
-/* 시터 사진 */
-.sitter-photo
-{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;		/* 사진 원형으로 만들기 */
-    overflow: hidden;		/* 지정한 크기 초과 시 초과분 hidden */
-}
 
-.sitter-photo img
-{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;		/* 이미지를 영역에 꽉 채우기, 비율 유지, 초과분 hidden */
-}
-
-/* 시터 정보 */
-.sitter-info
+/* 긴급 돌봄 등록 정보 */
+.emg-info
 {
     flex: 1;
 }
 
-.sitter-name
+.parent-id
 {
 	display: flex;
     font-size: 18px;
@@ -308,7 +158,7 @@ input, select
     margin-bottom: 5px;
 }
 
-.sitter-details
+.emg-details
 {
     display: flex;
     flex-wrap: wrap;
@@ -316,7 +166,7 @@ input, select
     margin-bottom: 10px;
 }
 
-.sitter-details div
+.emg-details div
 {
     display: flex;
     align-items: center;
@@ -349,4 +199,16 @@ input, select
 {
 	background-color: #febdb4;
     color: #d9534f;
+}
+
+.child-has
+{
+	display: inline;
+}
+
+.child-has ul
+{
+	padding: 10px;
+	margin-left: 10px;
+	
 }
