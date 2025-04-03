@@ -84,7 +84,7 @@ h1
 h2
 {
     font-size: 20px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     color: #333;
     white-space: nowrap;
     padding: 10px;
@@ -102,6 +102,11 @@ h2
 {
     margin-bottom: 15px;
     padding: 10px;
+}
+
+.req
+{
+    margin-bottom: 0px;
 }
 
 label
@@ -250,12 +255,22 @@ input, select
     width: 100%;
 }
 
-#wrapper-body
+#wrapper-body-search
 {
 	display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: row;
+    gap: 20px 20px;	
+    width: 80%;
+}
+
+#wrapper-body-req
+{
+	display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
     gap: 20px 20px;	
     width: 80%;
 }
@@ -277,6 +292,7 @@ input, select
     gap: 20px;
     box-shadow: 2px 2px 0 #e5e5e5;
 }
+
 
 /* 시터 사진 */
 .sitter-photo

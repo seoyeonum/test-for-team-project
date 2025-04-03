@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>genFilterSecondaryForm.html</title>
+<title>genSearchResult.jsp</title>
 <link rel="stylesheet" type="text/css" href="css/gen-filter.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
@@ -134,7 +134,7 @@
 		</div>
 	</div>
 	
-	<div id="wrapper-body">
+	<div id="wrapper-body-search">
 		
 		<!-- (side) 일반 돌봄 2차 필터 -->
 		<div class="secondary-filter" id="secondary-filter">
@@ -312,7 +312,7 @@
 		
 		<!-- 검색 결과 -->
 	    <div class="results" id="results">
-	        <h2>검색 결과 <span id="result-count">(3)</span></h2>
+	        <h2>검색 결과 (3)</h2>
 	        
 	        <!-- 일반 돌봄 각 등록 건 -->
 	        <div class="gen-registered">

@@ -38,9 +38,9 @@
 	</div>
 	
 	<!-- 부모의 긴급 돌봄 요청 표시 -->
-	<div id="wrapper-body">
+	<div id="wrapper-body-search">
 		<div class="sub-subject">
-	        <h2>긴급 돌봄 요청 리스트 <span id="result-count">(3)</span></h2>
+	        <h2>긴급 돌봄 요청 리스트 (3)</h2>
 		</div>
 		<div class="results" id="results">
 	        

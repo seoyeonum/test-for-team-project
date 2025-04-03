@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>genFilterPrimaryForm.html</title>
+<title>genMain.jsp</title>
 <link rel="stylesheet" type="text/css" href="css/gen-filter.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
@@ -100,7 +100,7 @@
 		</div>
 	</div>
 	
-	<div id=wrapper-body">
+	<div id=wrapper-body-req">
 		<!-- 공지사항 간단 리스트로 보여주기 -->
 		<div class="filter-box">
 			<h2>공지사항</h2>
