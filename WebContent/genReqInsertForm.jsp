@@ -174,6 +174,7 @@
 		                <div class="details">
 		                    <input type="text" maxlength="160"
 		                    placeholder="(시터님에게 전달하실 말씀을 적어주세요.)"/>	<!-- 현재 ERD 상 varchar2(500)이라 160자 정도 입력 가능.. -->
+		                    <button class="btn btn-small" type="reset">다시 작성</button>
 		                </div>
 	                    <div class="details">
 		                    <div><span class="star">*최대 160자까지 작성 가능합니다.</span></div>
@@ -187,10 +188,55 @@
 			<!-- 4. 결제 정보 -->
 			<!-- 
 				- 총 신청하는 시간과 등급에 따라 산출된 결제 정보 표시
+				- 포인트 적용 가능
 				- 결제 진행 전 확인하는 마지막 단계
 			
 				- 결제 진행 여부 체크 진행 후 API로 결제 진행
 			-->
+			<div class="box-req">
+				<label>결제 예정 금액</label>
+	            <div class="child-info">
+	            	<div class="form-group req">
+		                <div class="name">결제 비용</div>
+		                <div class="details payment">
+		                	<div>이용 일수: 1 (일)</div>
+		                	<div>이용 시간: 2 (시간)</div>
+		                	<div>시간 당 비용: (일반 돌봄) 10,000 × (브론즈) 1.2 = 12,000 (원)</div>
+		                	<div>총 지불 비용: 2 × 12,000 × (수수료) 1.05 = 25,200 (원)</div>
+		                </div>
+		                <br>
+		                <div class="name">포인트 사용</div>
+		                <div class="details payment">
+		                	<div>현재 보유 포인트: 600원</div>
+		                	<div>사용할 포인트: 
+		                    	<input type="text" min="100" placeholder="(사용할 포인트)"/>원
+		                    </div>
+		                </div>
+	                    <div class="details payment">
+		                    <div><span class="star">*최소 100원부터 사용 가능합니다.</span></div>
+		                </div>
+		                <br>
+		                <div class="name">결제 예정 금액</div>
+		                <div class="details payment">
+		                	<div>25,200 - (포인트 차감) = 25,200 (원)</div>
+		                </div>
+		            </div>
+		            
+		            
+	   			 </div>
+	        </div>
+	        
+	        <!-- 5. 결제 정보 확인 -->
+	        <div class="box-req">
+	        	<label>결제 정보 확인</label>
+	            <div class="form-group-confirm">
+	                <div class="confirm">
+	                	<input type="checkbox" id="check-payment">
+	                	<div>위 내용으로 결제를 진행합니다.</div>
+	                </div>
+		            <button class="btn" type="button">결제 진행</button>
+		       </div>
+	        </div>
 		</div>	
 		
 	</div>
