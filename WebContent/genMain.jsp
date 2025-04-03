@@ -73,7 +73,6 @@
 				             <option value="16">오후 4:00</option>
 				             <option value="17">오후 5:00</option>
 				             <option value="18">오후 6:00</option>
-				             <option value="19">오후 7:00</option>
 				    	</select>
 				      	<span>부터</span>
 				      	<select id="time-end" required>

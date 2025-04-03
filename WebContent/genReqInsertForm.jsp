@@ -55,7 +55,7 @@
 		<div class="sub-body">
 			<div class="box-req">
 				<label>돌봄 희망 시터</label>
-	            <div class="sitter-info">
+	            <div class="gen-info">
 	            	<div class="form-group req" id="toggle-sitter-req">
 		                <div class="sitter-name">김탄 시터&nbsp;<span class="badge male">남</span> </div>
 		                <div class="sitter-details">
@@ -115,7 +115,7 @@
 			
 			<div class="box-req">
 				<label>돌봄 희망 아이</label>
-	            <div class="child-info">
+	            <div class="gen-info">
 	            	<div class="form-group req">
 		                <div class="child-name">김충식&nbsp;<span class="badge male">남</span> </div>
 		                <div class="details">
@@ -168,7 +168,7 @@
 			-->
 			<div class="box-req">
 				<label>돌봄 특이 사항</label>
-	            <div class="child-info">
+	            <div class="gen-info">
 	            	<div class="form-group req">
 		                <div class="name">전달 메시지</div>
 		                <div class="details">
@@ -195,7 +195,7 @@
 			-->
 			<div class="box-req">
 				<label>결제 예정 금액</label>
-	            <div class="child-info">
+	            <div class="gen-info">
 	            	<div class="form-group req">
 		                <div class="name">결제 비용</div>
 		                <div class="details payment">
