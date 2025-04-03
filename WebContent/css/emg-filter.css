@@ -42,17 +42,17 @@ body
 {
 	margin-right: 900px; 				   /* 기본적으로 우측에 900px 간격 */
 }
-
-/* 반응형 디자인 구현 --------------------------------------------------------- */
+/* 
+반응형 디자인 구현 ---------------------------------------------------------
 @media (max-width: 1280px)
 {
 	.main-subject h1
 	{
-		margin-right: calc(100vw * 0.8);  /* 화면이 1280px 이하로 줄어들면 우측 간격을 80%로 설정 */
+		margin-right: calc(100vw * 0.8);  화면이 1280px 이하로 줄어들면 우측 간격을 80%로 설정
 	}
 	.sub-subject h2
 	{
-		margin-right: calc(100vw * 0.75);  /* 화면이 1280px 이하로 줄어들면 우측 간격을 75%로 설정 */
+		margin-right: calc(100vw * 0.75);  화면이 1280px 이하로 줄어들면 우측 간격을 75%로 설정
 	}
 }
 
@@ -60,26 +60,26 @@ body
 {
 	.main-subject h1
 	{
-		margin-right: calc(100vw * 0.7);  /* 화면이 960px 이하로 줄어들면 우측 간격을 70%로 설정 */
+		margin-right: calc(100vw * 0.7);  화면이 960px 이하로 줄어들면 우측 간격을 70%로 설정
 	}
 	.sub-subject h2
 	{
-		margin-right: calc(100vw * 0.65);  /* 화면이 960px 이하로 줄어들면 우측 간격을 65%로 설정 */
+		margin-right: calc(100vw * 0.65);  화면이 960px 이하로 줄어들면 우측 간격을 65%로 설정
 	}
 }
 @media (max-width: 640px)
 {
 	.main-subject h1
 	{
-		margin-right: 0;  /* 화면이 640px 이하로 줄어들면 우측 간격을 0로 설정 */
+		margin-right: 0;  화면이 640px 이하로 줄어들면 우측 간격을 0로 설정
 	}
 	.sub-subject h2
 	{
-		margin-right: 0;  /* 화면이 640px 이하로 줄어들면 우측 간격을 0로 설정 */
+		margin-right: 0;  화면이 640px 이하로 줄어들면 우측 간격을 0로 설정
 	}
 }
-/* --------------------------------------------------------------------------- */
-
+---------------------------------------------------------------------------
+ */
 h1
 {
 	font-size: 24px;
@@ -124,15 +124,15 @@ h2
     right: 20px;
 }
 
-
+/* 
 #wrapper-body
 {
 	display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    /* gap: 20px 20px; */
-}
+    gap: 20px 20px;
+} */
 
 /* 검색 결과 */
 .results
@@ -142,6 +142,7 @@ h2
 	gap: 10px 10px;
 	flex-wrap: wrap;
 	justify-content: center;
+	width: 1070px;
 }
 
 /* 긴급 돌봄 각 등록 건 */
@@ -165,7 +166,6 @@ h2
 {
     flex: 1;
 }
-
 .parent-id
 {
 	display: flex;
@@ -173,6 +173,7 @@ h2
     font-weight: 700;
     margin-bottom: 5px;
 }
+
 
 .emg-details
 {

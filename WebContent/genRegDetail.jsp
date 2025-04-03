@@ -27,11 +27,13 @@
 <!-- <div id="header-container"></div> -->
 
 <div id="body-container">
+	<!--
 	<div id="wrapper-header">
 		<div class="main-subject">
 			<h1>일반 돌봄 서비스</h1>
 		</div>
 	</div>	
+	-->
 	
 	<div id="wrapper-body-search">
 	
@@ -40,7 +42,7 @@
 	        <h2>일반 돌봄 상세 정보</h2>
 	        
 	        <!-- 일반 돌봄 각 등록 건 -->
-	        <div class="gen-registered">
+	        <div class="box-req">
 	            <div class="sitter-photo">
 	                <img src="./images/sit01.jpg" alt="시터 사진">
 	            </div>

@@ -24,7 +24,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 25px 10px;						/* 첫 번째 값은 수직 간격, 두 번째 값은 수평 간격 */
+    gap: 0px 10px;						/* 첫 번째 값은 수직 간격, 두 번째 값은 수평 간격 */
 }
 
 body
@@ -38,31 +38,31 @@ body
 {
 	margin-right: 1000px; 				   /* 기본적으로 우측에 1000px 간격 */
 }
-
-/* 반응형 디자인 구현 --------------------------------------------------------- */
+/* 
+반응형 디자인 구현 ---------------------------------------------------------
 @media (max-width: 1280px)
 {
 	.main-subject h1
 	{
-		margin-right: calc(100vw * 0.8);  /* 화면이 1280px 이하로 줄어들면 우측 간격을 80%로 설정 */
+		margin-right: calc(100vw * 0.8);  화면이 1280px 이하로 줄어들면 우측 간격을 80%로 설정
 	}
 }
 @media (max-width: 960px)
 {
 	.main-subject h1
 	{
-		margin-right: calc(100vw * 0.7);  /* 화면이 960px 이하로 줄어들면 우측 간격을 70%로 설정 */
+		margin-right: calc(100vw * 0.7);  화면이 960px 이하로 줄어들면 우측 간격을 70%로 설정
 	}
 }
 @media (max-width: 640px)
 {
 	.main-subject h1
 	{
-		margin-right: 0;  /* 화면이 640px 이하로 줄어들면 우측 간격을 0로 설정 */
+		margin-right: 0;  화면이 640px 이하로 줄어들면 우측 간격을 0로 설정
 	}
 }
-/* --------------------------------------------------------------------------- */
-
+---------------------------------------------------------------------------
+ */
 h1
 {
 	font-size: 24px;
@@ -265,6 +265,8 @@ input, select
     width: 80%;
 }
 
+
+/*
 #wrapper-body-req
 {
 	display: flex;
@@ -274,9 +276,20 @@ input, select
     gap: 20px 20px;	
     width: 80%;
 }
+ */
+.sub-body
+{
+	display: flex;
+	flex: 1;
+	gap: 10px 10px;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 1070px;
+}
+
 
 /* 검색 결과 */
-.results-container
+.results
 {
 	flex: 1;
 }
@@ -292,6 +305,19 @@ input, select
     gap: 20px;
     box-shadow: 2px 2px 0 #e5e5e5;
 }
+
+.box-req
+{
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 2px 2px 0 #e5e5e5;
+    width: 800px;
+}
+
 
 
 /* 시터 사진 */
@@ -315,7 +341,6 @@ input, select
 {
     flex: 1;
 }
-
 .sitter-name
 {
 	display: flex;
@@ -342,6 +367,66 @@ input, select
     white-space: nowrap;
 }
 
+.child-info
+{
+    flex: 1;
+}
+
+.child-name
+{
+	display: flex;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.details
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.details div
+{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+}
+
+.details input
+{
+	flex: 1;
+    width: 500px;
+    margin: 5px;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.child-has
+{
+	display: inline;
+}
+
+.child-has ul
+{
+	padding: 10px;
+	margin-left: 10px;
+	
+}
+
+.name
+{
+	display: flex;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
 /* 뱃지 형태의 정보 표시 */
 .badge
 {
@@ -365,4 +450,11 @@ input, select
 {
 	background-color: #febdb4;
     color: #d9534f;
+}
+
+.star
+{
+	display: flex;
+    color: #d9534f;
+    font-size: 12px;
 }

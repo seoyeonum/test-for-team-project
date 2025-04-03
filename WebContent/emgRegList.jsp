@@ -42,142 +42,146 @@
 		<div class="sub-subject">
 	        <h2>긴급 돌봄 요청 리스트 (3)</h2>
 		</div>
-		<div class="results" id="results">
-	        
-	        <% for (int i=0; i<10; i++)
-	        {%>
-	        <!-- 긴급 돌봄 각 등록 건 1 -->
-	        <div class="emg-registered">
-	            <div class="emg-info">
-	                <div class="parent-id">parent01</div>
-                	<!-- 1.부모가 긴급 돌봄 요청한 날짜, 시간 -->
-                	<div class="emg-details">
-	                    <div>돌봄 요청 일자: 📆2025.04.03.~2025.04.03.</div>
-	                </div>
-	                <div class="emg-details">
-	                    <div>돌봄 요청 시간: ⏰오전 8시 ~ 오후 10시</div>
-	                </div>
-	                
-	                <!-- 2.부모 거주지의 지역(개인정보 기반) -->
-                    <div class="emg-details">
-                    	<div>지역: <span class="badge">용산구</span></div>
-                    </div>
-                    
-                    <!-- 3.아이 성별 -->
-                	<div class="emg-details">
-                		<div>아이 성별:<span class="badge male">남</span></div>
-                	</div>
-                	
-                	<!-- 4.아이 연령 -->
-                    <div class="emg-details">
-                    	<div>아이 연령: 만 4 세</div>
-                    </div>
-                    
-                    <!-- 5. 장애 및 지병, 알레르기 유무 -->
-                    <!-- 
-                    <div class="emg-details child-has">
-                    	<div>장애 및 지병, 알레르기:</div>
-                    	<div>
-                    		<ul>
-                    			<li>꽃가루 알레르기</li>
-                    			<li>호두 알레르기</li>
-                    		</ul>
-                    	</div>
-                    </div>
-                     -->
-	                <button type="button" class="btn btn-small" id="gen-details">지원하기</button>
-                </div>
-            </div>
-	        
-	        <!-- 긴급 돌봄 각 등록 건 2 -->
-	        <div class="emg-registered">
-	            <div class="emg-info">
-	                <div class="parent-id">parent02</div>
-                	<!-- 1.부모가 긴급 돌봄 요청한 날짜, 시간 -->
-                	<div class="emg-details">
-	                    <div>돌봄 요청 일자: 📆2025.04.04.~2025.04.05.</div>
-	                </div>
-	                <div class="emg-details">
-	                    <div>돌봄 요청 시간: ⏰오전 11시 ~ 오후 1시</div>
-	                </div>
-	                
-	                <!-- 2.부모 거주지의 지역(개인정보 기반) -->
-                    <div class="emg-details">
-                    	<div>지역: <span class="badge">마포구</span></div>
-                    </div>
-                    
-                    <!-- 3.아이 성별 -->
-                	<div class="emg-details">
-                		<div>아이 성별:<span class="badge male">남</span></div>
-                	</div>
-                	
-                	<!-- 4.아이 연령 -->
-                    <div class="emg-details">
-                    	<div>아이 연령: 만 3 세</div>
-                    </div>
-                    
-                    <!-- 5. 장애 및 지병, 알레르기 유무 -->
-                    <div class="emg-details child-has">
-                    	<div>장애 및 지병, 알레르기:</div>
-                    	<div>
-                    		<ul>
-                    			<li>꽃가루 알레르기</li>
-                    			<li>호두 알레르기</li>
-                    		</ul>
-                    	</div>
-                    </div>
-                    
-	                <button type="button" class="btn btn-small" id="gen-details">지원하기</button>
-                </div>
-            </div>
-            <!-- 긴급 돌봄 각 등록 건 3 -->
-	        <div class="emg-registered">
-	            <div class="emg-info">
-	                <div class="parent-id">parent03</div>
-                	<!-- 1.부모가 긴급 돌봄 요청한 날짜, 시간 -->
-                	<div class="emg-details">
-	                    <div>돌봄 요청 일자: 📆2025.04.04.~2025.04.05.</div>
-	                </div>
-	                <div class="emg-details">
-	                    <div>돌봄 요청 시간: ⏰오후 2시 ~ 오후 5시</div>
-	                </div>
-	                
-	                <!-- 2.부모 거주지의 지역(개인정보 기반) -->
-                    <div class="emg-details">
-                    	<div>지역: <span class="badge">성북구</span></div>
-                    </div>
-                    
-                    <!-- 3.아이 성별 -->
-                	<div class="emg-details">
-                		<div>아이 성별:<span class="badge female">여</span></div>
-                	</div>
-                	
-                	<!-- 4.아이 연령 -->
-                    <div class="emg-details">
-                    	<div>아이 연령: 만 5 세</div>
-                    </div>
-                    
-                    <!-- 5. 장애 및 지병, 알레르기 유무 -->
-                    <!-- 
-                    <div class="emg-details child-has">
-                    	<div>장애 및 지병, 알레르기:</div>
-                    	<div>
-                    		<ul>
-                    			<li>꽃가루 알레르기</li>
-                    			<li>호두 알레르기</li>
-                    		</ul>
-                    	</div>
-                    </div>
-                     -->
-                     
-	                <button type="button" class="btn btn-small" id="gen-details">지원하기</button>
-                </div>
-            </div>
-            <%
-            }
-	        %>
-        </div>
 		
+		<div class="sub-body">
+			<div class="results" id="results">
+		    
+		    
+		        <% for (int i=0; i<10; i++)
+		        {%>
+		        <!-- 긴급 돌봄 각 등록 건 1 -->
+		        <div class="emg-registered">
+		            <div class="emg-info">
+		                <div class="parent-id">parent01</div>
+	                	<!-- 1.부모가 긴급 돌봄 요청한 날짜, 시간 -->
+	                	<div class="emg-details">
+		                    <div>돌봄 요청 일자: 📆2025.04.03.~2025.04.03.</div>
+		                </div>
+		                <div class="emg-details">
+		                    <div>돌봄 요청 시간: ⏰오전 8시 ~ 오후 10시</div>
+		                </div>
+		                
+		                <!-- 2.부모 거주지의 지역(개인정보 기반) -->
+	                    <div class="emg-details">
+	                    	<div>지역: <span class="badge">용산구</span></div>
+	                    </div>
+	                    
+	                    <!-- 3.아이 성별 -->
+	                	<div class="emg-details">
+	                		<div>아이 성별:<span class="badge male">남</span></div>
+	                	</div>
+	                	
+	                	<!-- 4.아이 연령 -->
+	                    <div class="emg-details">
+	                    	<div>아이 연령: 만 4 세</div>
+	                    </div>
+	                    
+	                    <!-- 5. 장애 및 지병, 알레르기 유무 -->
+	                    <!-- 
+	                    <div class="emg-details child-has">
+	                    	<div>장애 및 지병, 알레르기:</div>
+	                    	<div>
+	                    		<ul>
+	                    			<li>꽃가루 알레르기</li>
+	                    			<li>호두 알레르기</li>
+	                    		</ul>
+	                    	</div>
+	                    </div>
+	                     -->
+		                <button type="button" class="btn btn-small" id="gen-details">지원하기</button>
+	                </div>
+	            </div>
+		        
+		        <!-- 긴급 돌봄 각 등록 건 2 -->
+		        <div class="emg-registered">
+		            <div class="emg-info">
+		                <div class="parent-id">parent02</div>
+	                	<!-- 1.부모가 긴급 돌봄 요청한 날짜, 시간 -->
+	                	<div class="emg-details">
+		                    <div>돌봄 요청 일자: 📆2025.04.04.~2025.04.05.</div>
+		                </div>
+		                <div class="emg-details">
+		                    <div>돌봄 요청 시간: ⏰오전 11시 ~ 오후 1시</div>
+		                </div>
+		                
+		                <!-- 2.부모 거주지의 지역(개인정보 기반) -->
+	                    <div class="emg-details">
+	                    	<div>지역: <span class="badge">마포구</span></div>
+	                    </div>
+	                    
+	                    <!-- 3.아이 성별 -->
+	                	<div class="emg-details">
+	                		<div>아이 성별:<span class="badge male">남</span></div>
+	                	</div>
+	                	
+	                	<!-- 4.아이 연령 -->
+	                    <div class="emg-details">
+	                    	<div>아이 연령: 만 3 세</div>
+	                    </div>
+	                    
+	                    <!-- 5. 장애 및 지병, 알레르기 유무 -->
+	                    <div class="emg-details child-has">
+	                    	<div>장애 및 지병, 알레르기:</div>
+	                    	<div>
+	                    		<ul>
+	                    			<li>꽃가루 알레르기</li>
+	                    			<li>호두 알레르기</li>
+	                    		</ul>
+	                    	</div>
+	                    </div>
+	                    
+		                <button type="button" class="btn btn-small" id="gen-details">지원하기</button>
+	                </div>
+	            </div>
+	            <!-- 긴급 돌봄 각 등록 건 3 -->
+		        <div class="emg-registered">
+		            <div class="emg-info">
+		                <div class="parent-id">parent03</div>
+	                	<!-- 1.부모가 긴급 돌봄 요청한 날짜, 시간 -->
+	                	<div class="emg-details">
+		                    <div>돌봄 요청 일자: 📆2025.04.04.~2025.04.05.</div>
+		                </div>
+		                <div class="emg-details">
+		                    <div>돌봄 요청 시간: ⏰오후 2시 ~ 오후 5시</div>
+		                </div>
+		                
+		                <!-- 2.부모 거주지의 지역(개인정보 기반) -->
+	                    <div class="emg-details">
+	                    	<div>지역: <span class="badge">성북구</span></div>
+	                    </div>
+	                    
+	                    <!-- 3.아이 성별 -->
+	                	<div class="emg-details">
+	                		<div>아이 성별:<span class="badge female">여</span></div>
+	                	</div>
+	                	
+	                	<!-- 4.아이 연령 -->
+	                    <div class="emg-details">
+	                    	<div>아이 연령: 만 5 세</div>
+	                    </div>
+	                    
+	                    <!-- 5. 장애 및 지병, 알레르기 유무 -->
+	                    <!-- 
+	                    <div class="emg-details child-has">
+	                    	<div>장애 및 지병, 알레르기:</div>
+	                    	<div>
+	                    		<ul>
+	                    			<li>꽃가루 알레르기</li>
+	                    			<li>호두 알레르기</li>
+	                    		</ul>
+	                    	</div>
+	                    </div>
+	                     -->
+	                     
+		                <button type="button" class="btn btn-small" id="gen-details">지원하기</button>
+	                </div>
+	            </div>
+	            <%
+	            }
+		        %>
+		    
+		    </div>
+		</div>
     </div>
 	
 	

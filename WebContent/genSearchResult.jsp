@@ -67,7 +67,7 @@
 		</div>
 		
 		<!-- (main) 일반 돌봄 1차 필터 -->
-		<div class="primary-filter">
+		<div class="filter-box">
 			<h2>1차 필터</h2>
 		    <form id="primary-filter-form">
 		    	<div class="form-group">
