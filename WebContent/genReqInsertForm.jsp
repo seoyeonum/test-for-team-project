@@ -56,7 +56,7 @@
 			<div class="box-req">
 				<label>돌봄 희망 시터</label>
 	            <div class="gen-info">
-	            	<div class="form-group req" id="toggle-sitter-req">
+	            	<div class="form-group" id="toggle-sitter-req">
 		                <div class="sitter-name">김탄 시터&nbsp;<span class="badge male">남</span> </div>
 		                <div class="sitter-details">
 		                    <div><img src="" alt="🥉">브론즈 시터</div>	<!-- 대체 텍스트 수정 필요 -->
@@ -67,7 +67,8 @@
 		            	</div>
 	            	</div>
 	            	<!-- 아래는 접힐 내용 -->
-	            	<div class="form-group req" id="sitter-req-hidden">
+	            	<div class="form-group" id="sitter-req-hidden">
+		            	<hr><br>
 		            	<div class="sitter-details">
 		                    <div>돌봄 등록 일자: 📆2025.03.31.~2025.04.11.</div>
 		                </div>
@@ -116,7 +117,7 @@
 			<div class="box-req">
 				<label>돌봄 희망 아이</label>
 	            <div class="gen-info">
-	            	<div class="form-group req">
+	            	<div class="form-group">
 		                <div class="child-name">김충식&nbsp;<span class="badge male">남</span> </div>
 		                <div class="gen-details">
 		                    <div>돌봄 희망 일자: 📆2025.04.03.~2025.04.03.</div>
@@ -169,7 +170,7 @@
 			<div class="box-req">
 				<label>돌봄 특이 사항</label>
 	            <div class="gen-info">
-	            	<div class="form-group req">
+	            	<div class="form-group">
 		                <div class="name">전달 메시지</div>
 		                <div class="gen-details">
 		                    <input type="text" maxlength="160"
@@ -196,7 +197,7 @@
 			<div class="box-req">
 				<label>결제 예정 금액</label>
 	            <div class="gen-info">
-	            	<div class="form-group req">
+	            	<div class="form-group">
 		                <div class="name">결제 비용</div>
 		                <div class="gen-details payment">
 		                	<div>이용 일수: 1 (일)</div>
@@ -230,7 +231,7 @@
 	        <!-- 5. 결제 정보 확인 -->
 	        <div class="box-req">
 	        	<label>결제 정보 확인</label>
-	            <div class="form-group-confirm">
+	            <div class="form-group gen-info">
 	                <div class="row-items">
 	                	<input type="checkbox" id="check-payment">
 	                	<div>위 내용으로 결제를 진행합니다.</div>

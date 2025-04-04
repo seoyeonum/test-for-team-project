@@ -92,7 +92,9 @@
 				        <label for="date-wish">돌봄 희망 날짜</label>
 				        <div class="date-range">
 				        	<input type="date" id="date-start" required="required">
+				        	<span>부터</span>
 				        	<input type="date" id="date-end" required="required">
+				        	<span>까지</span>
 				    	</div>
 				    </div>
 				
@@ -308,9 +310,9 @@
 							<input type="range" name="price" min="0" max="41092240" step="10000" value="1340000">
 						</label>
 						<label class="range-label">
-				            <span>0원</span>
+				            <span>0</span>
 				            <span id="current-price">1,340,000원</span>
-				            <span>4,092,240원</span>
+				            <span>MAX</span>
 			            </label>
 			        </div>
 				</div>

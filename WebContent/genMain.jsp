@@ -58,7 +58,9 @@
 				        <label for="date-wish">돌봄 희망 날짜</label>
 				        <div class="date-range">
 				        	<input type="date" id="date-start" required="required">
+				        	<span>부터</span>
 				        	<input type="date" id="date-end" required="required">
+				        	<span>까지</span>
 				    	</div>
 				    </div>
 				
