@@ -52,7 +52,7 @@
 			- 이름, 성별, 등급, 평점만 남기고 내용 접을(숨길) 수 있게 하자
 			- 시터 사진도 보여 주는 게 나을지?
 		-->
-		<div class="sub-body">
+		<div class="sub-body-form">
 			<div class="box-req">
 				<label>돌봄 희망 시터</label>
 	            <div class="gen-info">
@@ -118,19 +118,19 @@
 	            <div class="gen-info">
 	            	<div class="form-group req">
 		                <div class="child-name">김충식&nbsp;<span class="badge male">남</span> </div>
-		                <div class="details">
+		                <div class="gen-details">
 		                    <div>돌봄 희망 일자: 📆2025.04.03.~2025.04.03.</div>
 		                </div>
-		                <div class="details">
+		                <div class="gen-details">
 		                    <div>돌봄 희망 시간: ⏰오전 8시 ~ 오전 10시</div>
 		                </div>
-		                <div class="details">
+		                <div class="gen-details">
 		                    <div>돌봄 장소: 종로구 사직로 161, 101동 1392호</div>
 		                </div>
-	                    <div class="details">
+	                    <div class="gen-details">
 	                    	<div>아이 연령: 만 4 세</div>
 	                    </div>
-	                    <div class="details child-has">
+	                    <div class="gen-details child-has">
 	                    	<div>장애 및 지병, 알레르기:</div>
 	                    	<div>
 	                    		<ul>
@@ -139,20 +139,20 @@
 	                    		</ul>
 	                    	</div>
 	                    </div>
-	                    <div class="details">
+	                    <div class="gen-details">
 	                    	<div><span class="star">*</span>신장: (미입력)</div>
 	                    </div>
-	                    <div class="details">
+	                    <div class="gen-details">
 	                    	<div><span class="star">*</span>몸무게: (미입력)</div>
 	                    </div>
-	                    <div class="details">
+	                    <div class="gen-details">
 	                    	<div><span class="star">*</span>혈액형: A</div>
 	                    </div>
-	                    <div class="details">
+	                    <div class="gen-details">
 	                    	<div><span class="star">*</span>기타 특이사항: 아이가 낯가림이 조금 있습니다.</div>
 	                    </div>
 	                    <br>
-	                    <div class="details">
+	                    <div class="gen-details">
 		                    <div><span class="star">*표시된 정보는 일반 돌봄 예약 확정 이후 시터님이 열람 가능합니다.</span></div>
 		                </div>  
 		            </div>
@@ -171,12 +171,12 @@
 	            <div class="gen-info">
 	            	<div class="form-group req">
 		                <div class="name">전달 메시지</div>
-		                <div class="details">
+		                <div class="gen-details">
 		                    <input type="text" maxlength="160"
 		                    placeholder="(시터님에게 전달하실 말씀을 적어주세요.)"/>	<!-- 현재 ERD 상 varchar2(500)이라 160자 정도 입력 가능.. -->
-		                    <button class="btn btn-small" type="reset">다시 작성</button>
+		                    <button class="btn gen-btn-small" type="reset">다시 작성</button>
 		                </div>
-	                    <div class="details">
+	                    <div class="gen-details">
 		                    <div><span class="star">*최대 160자까지 작성 가능합니다.</span></div>
 		                </div>  
 		            </div>
@@ -198,7 +198,7 @@
 	            <div class="gen-info">
 	            	<div class="form-group req">
 		                <div class="name">결제 비용</div>
-		                <div class="details payment">
+		                <div class="gen-details payment">
 		                	<div>이용 일수: 1 (일)</div>
 		                	<div>이용 시간: 2 (시간)</div>
 		                	<div>시간 당 비용: (일반 돌봄) 10,000 × (브론즈) 1.2 = 12,000 (원)</div>
@@ -206,19 +206,20 @@
 		                </div>
 		                <br>
 		                <div class="name">포인트 사용</div>
-		                <div class="details payment">
+		                <div class="gen-details payment">
 		                	<div>현재 보유 포인트: 600원</div>
 		                	<div>사용할 포인트: 
 		                    	<input type="text" min="100" placeholder="(사용할 포인트)"/>원
+		                    	<button class="btn gen-btn-small" type="button">적용</button>
 		                    </div>
 		                </div>
-	                    <div class="details payment">
+	                    <div class="gen-details payment">
 		                    <div><span class="star">*최소 100원부터 사용 가능합니다.</span></div>
 		                </div>
 		                <br>
 		                <div class="name">결제 예정 금액</div>
-		                <div class="details payment">
-		                	<div>25,200 - (포인트 차감) = 25,200 (원)</div>
+		                <div class="gen-details payment">
+		                	<div>25,200 - (포인트 차감) = 25,200 (원)</div>		                	
 		                </div>
 		            </div>
 		            
@@ -230,11 +231,11 @@
 	        <div class="box-req">
 	        	<label>결제 정보 확인</label>
 	            <div class="form-group-confirm">
-	                <div class="confirm">
+	                <div class="row-items">
 	                	<input type="checkbox" id="check-payment">
 	                	<div>위 내용으로 결제를 진행합니다.</div>
 	                </div>
-		            <button class="btn" type="button">결제 진행</button>
+		            <button class="btn gen-btn-small" type="button">결제 진행</button>
 		       </div>
 	        </div>
 		</div>	

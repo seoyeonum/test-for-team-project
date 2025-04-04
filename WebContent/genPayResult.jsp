@@ -50,7 +50,7 @@
 			  시터님의 수락 이후 알림이 발송됩니다.
 			- 
 		-->
-		<div class="sub-body">
+		<div class="sub-body-form">
 			<div class="box-req-complete">
 				<label class="complete-subject">일반 돌봄 결제 및 신청이 완료되었습니다.</label>
 	            <div class="result-info">

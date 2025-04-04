@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>emgRegList.jsp</title>
-<link rel="stylesheet" type="text/css" href="css/emg-filter.css">
+<link rel="stylesheet" type="text/css" href="css/gen-filter.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
 
@@ -44,7 +44,7 @@
 		</div>
 		
 		<div class="sub-body">
-			<div class="results" id="results">
+			<div class="emg-results">
 		    
 		    
 		        <% for (int i=0; i<10; i++)
@@ -88,7 +88,7 @@
 	                    	</div>
 	                    </div>
 	                     -->
-		                <button type="button" class="btn btn-small" id="gen-details">지원하기</button>
+		                <button type="button" class="btn emg-btn-small">지원하기</button>
 	                </div>
 	            </div>
 		        
@@ -130,7 +130,7 @@
 	                    	</div>
 	                    </div>
 	                    
-		                <button type="button" class="btn btn-small" id="gen-details">지원하기</button>
+		                <button type="button" class="btn emg-btn-small">지원하기</button>
 	                </div>
 	            </div>
 	            <!-- 긴급 돌봄 각 등록 건 3 -->
@@ -173,7 +173,7 @@
 	                    </div>
 	                     -->
 	                     
-		                <button type="button" class="btn btn-small" id="gen-details">지원하기</button>
+		                <button type="button" class="btn emg-btn-small">지원하기</button>
 	                </div>
 	            </div>
 	            <%

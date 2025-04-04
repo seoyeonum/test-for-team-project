@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>genPayResult.jsp</title>
+<title>emgPayResult.jsp</title>
 <link rel="stylesheet" type="text/css" href="css/gen-filter.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
@@ -50,7 +50,7 @@
 			  시터님의 수락 이후 알림이 발송됩니다.
 			- 
 		-->
-		<div class="sub-body">
+		<div class="sub-body-form">
 			<div class="box-req-complete">
 				<label class="complete-subject">긴급 돌봄 결제 및 신청이 완료되었습니다.</label>
 	            <div class="result-info">

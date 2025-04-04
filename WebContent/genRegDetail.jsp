@@ -38,11 +38,12 @@
 	<div id="wrapper-body-search">
 	
 		<!-- 일반 돌봄 등록 건 상세 -->
-	    <div class="results" id="results">
-	        <h2>일반 돌봄 상세 정보</h2>
-	        
+	    <div class="gen-results">
+	    	<div class="sub-subject">
+	        	<h2>일반 돌봄 상세 정보</h2>
+	        </div>
 	        <!-- 일반 돌봄 각 등록 건 -->
-	        <div class="box-req">
+	        <div class="box-detail">
 	            <div class="sitter-photo">
 	                <img src="./images/sit01.jpg" alt="시터 사진">
 	            </div>
@@ -84,10 +85,12 @@
 					<div class="sitter-details">
 	                    <div>마지막 근무일: 2025.03.14.</div>
 	            	</div>	
-	   			 </div>
+	   			</div>
 	        </div>
-	        <button type="button" class="btn" id="back">이전 목록으로</button>
-	        <button type="button" class="btn" id="gen-request">돌봄 신청하기</button>
+	        <div class="btn-area row-items">
+		        <button type="button" class="btn gen-btn-small" id="back">이전 목록으로</button>
+		        <button type="button" class="btn gen-btn-small" id="gen-request">돌봄 신청하기</button>
+		    </div>
 	    </div>
 	    
 	</div>

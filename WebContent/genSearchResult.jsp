@@ -65,80 +65,89 @@
 		<div class="main-subject">
 			<h1>일반 돌봄 서비스</h1>
 		</div>
-		
+	</div>
+	
+	<div id="wrapper-body">
 		<!-- (main) 일반 돌봄 1차 필터 -->
-		<div class="filter-box">
-			<h2>1차 필터</h2>
-		    <form id="primary-filter-form">
-		    	<div class="form-group">
-			        <label for="child-wish">돌봄 희망 아이</label>
-			        <div class="child-range">
-			        	<select id="child-name" required="required">
-				             <option value="">아이 선택</option>
-				             <option value="1">김창식</option>
-				             <option value="2">김충식</option>
-				             <option value="3">김민식</option>
-				             <option value="4">김주식</option>
-				    	</select>
-			    	</div>
-			    </div>
-			    
-				<div class="form-group">
-			        <label for="date-wish">돌봄 희망 날짜</label>
-			        <div class="date-range">
-			        	<input type="date" id="date-start" required="required">
-			        	<input type="date" id="date-end" required="required">
-			    	</div>
-			    </div>
-			
-			    <div class="form-group">
-			    	<label for="time-wish">돌봄 희망 시간</label>
-			     	<div class="time-range">
-			        	<select id="time-start" required="required">
-				             <option value="">시작 시간</option>
-				             <option value="8">오전 8:00</option>
-				             <option value="9">오전 9:00</option>
-				             <option value="10">오전 10:00</option>
-				             <option value="11">오전 11:00</option>
-				             <option value="12">오후 12:00</option>
-				             <option value="13">오후 1:00</option>
-				             <option value="14">오후 2:00</option>
-				             <option value="15">오후 3:00</option>
-				             <option value="16">오후 4:00</option>
-				             <option value="17">오후 5:00</option>
-				             <option value="18">오후 6:00</option>
-				             <option value="19">오후 7:00</option>
-				    	</select>
-				      	<span>부터</span>
-				      	<select id="time-end" required>
-				             <option value="">종료 시간</option>
-				             <option value="9">오전 9:00</option>
-				             <option value="10">오전 10:00</option>
-				             <option value="11">오전 11:00</option>
-				             <option value="12">오후 12:00</option>
-				             <option value="13">오후 1:00</option>
-				             <option value="14">오후 2:00</option>
-				             <option value="15">오후 3:00</option>
-				             <option value="16">오후 4:00</option>
-				             <option value="17">오후 5:00</option>
-				             <option value="18">오후 6:00</option>
-				             <option value="19">오후 7:00</option>
-			    		</select>
-			        	<span>까지</span>
-			        </div>
-			        <div class="warning" id="time-warning">※일반 돌봄 하루 최대 이용시간은 8시간입니다.</div>
-			    </div>
-			
-			    <button type="button" class="btn" id="primary-search-btn">시터 찾기</button>
-		    </form>
+		<div class="box-filter">
+			<div class="sub-subject">
+				<h2>1차 필터</h2>
+			</div>
+			<div class="sub-body">
+			    <form id="primary-filter-form">
+			    	<div class="form-group">
+				        <label for="child-wish">돌봄 희망 아이</label>
+				        <div class="child-range">
+				        	<select id="child-name" required="required">
+					             <option value="">아이 선택</option>
+					             <option value="1">김창식</option>
+					             <option value="2">김충식</option>
+					             <option value="3">김민식</option>
+					             <option value="4">김주식</option>
+					    	</select>
+				    	</div>
+				    </div>
+				    
+					<div class="form-group">
+				        <label for="date-wish">돌봄 희망 날짜</label>
+				        <div class="date-range">
+				        	<input type="date" id="date-start" required="required">
+				        	<input type="date" id="date-end" required="required">
+				    	</div>
+				    </div>
+				
+				    <div class="form-group">
+				    	<label for="time-wish">돌봄 희망 시간</label>
+				     	<div class="time-range">
+				        	<select id="time-start" required="required">
+					             <option value="">시작 시간</option>
+					             <option value="8">오전 8:00</option>
+					             <option value="9">오전 9:00</option>
+					             <option value="10">오전 10:00</option>
+					             <option value="11">오전 11:00</option>
+					             <option value="12">오후 12:00</option>
+					             <option value="13">오후 1:00</option>
+					             <option value="14">오후 2:00</option>
+					             <option value="15">오후 3:00</option>
+					             <option value="16">오후 4:00</option>
+					             <option value="17">오후 5:00</option>
+					             <option value="18">오후 6:00</option>
+					             <option value="19">오후 7:00</option>
+					    	</select>
+					      	<span>부터</span>
+					      	<select id="time-end" required>
+					             <option value="">종료 시간</option>
+					             <option value="9">오전 9:00</option>
+					             <option value="10">오전 10:00</option>
+					             <option value="11">오전 11:00</option>
+					             <option value="12">오후 12:00</option>
+					             <option value="13">오후 1:00</option>
+					             <option value="14">오후 2:00</option>
+					             <option value="15">오후 3:00</option>
+					             <option value="16">오후 4:00</option>
+					             <option value="17">오후 5:00</option>
+					             <option value="18">오후 6:00</option>
+					             <option value="19">오후 7:00</option>
+				    		</select>
+				        	<span>까지</span>
+				        </div>
+				        <div class="warning" id="time-warning">※일반 돌봄 하루 최대 이용시간은 8시간입니다.</div>
+				    </div>
+				
+				    <button type="button" class="btn" id="primary-search-btn">시터 찾기</button>
+			    </form>
+			</div>
 		</div>
 	</div>
 	
-	<div id="wrapper-body-search">
+	<div id="wrapper-body">
 		
 		<!-- (side) 일반 돌봄 2차 필터 -->
-		<div class="secondary-filter" id="secondary-filter">
-		    <h2>2차 필터</h2>
+		<div class="box-side">
+			<div class="sub-subject">
+		    	<h2>2차 필터</h2>
+		    </div>
+		    <div class="sidebar">
 		    <form id="secondary-filter-form">
 			    <div class="form-group">
 			    	<label id="toggle-grade">시터 등급</label>
@@ -308,14 +317,17 @@
 	
 				<button type="button" class="btn" id="secondary-searh-btn">필터 적용</button>
 			</form>
+			</div>
 		</div>
 		
 		<!-- 검색 결과 -->
-	    <div class="results" id="results">
-	        <h2>검색 결과 (3)</h2>
+	    <div class="gen-results" id="gen-results">
+	    	<div class="sub-subject">
+	        	<h2>검색 결과 (3)</h2>
+	        </div>
 	        
 	        <!-- 일반 돌봄 각 등록 건 -->
-	        <div class="gen-registered">
+	        <div class="box-preview">
 	            <div class="sitter-photo">
 	                <img src="./images/sit01.jpg" alt="시터 사진">
 	            </div>
@@ -325,12 +337,16 @@
 	                    <div><img src="" alt="🥉">브론즈 시터</div>		<!-- 대체 텍스트 수정 필요 -->
 	                	<div>최근 평점 ⭐4.9 (7건)</div>
 	                    <div>전체 평점 ⭐4.76 (123건)</div>
-	                    <!-- 가능 일자, 가능 시간도 명시하면 좋겠다! -->
 	                </div>
-	                <button type="button" class="btn btn-small" id="gen-details">상세 보기</button>
+	                <!-- 가능 일자, 가능 시간도 명시하면 좋겠다! -->
+	                <div class="sitter-details">
+	                    <div>돌봄 등록 일자: 📆2025.03.31.~2025.04.11.</div>
+	                    <div>돌봄 등록 시간: ⏰오전 9시 ~ 오후 2시</div>
+	                </div>
+	                <button type="button" class="btn gen-btn-small">상세 보기</button>
 	            </div>
 	        </div>
-			<div class="gen-registered">
+			<div class="box-preview">
 	            <div class="sitter-photo">
 	                <img src="./images/sit02.jpg" alt="시터 사진">
 	            </div>
@@ -340,12 +356,16 @@
 	                    <div><img src="" alt="🥈">실버 시터</div>	<!-- 대체 텍스트 수정 필요 -->
 	                    <div>최근 평점 ⭐4.3 (3건)</div>
 	                    <div>전체 평점 ⭐4.56 (290건)</div>
-	                    <!-- 가능 일자, 가능 시간도 명시하면 좋겠다! -->
 	                </div>
-	                <button type="button" class="btn btn-small" id="gen-details">상세 보기</button>
+	                <!-- 가능 일자, 가능 시간도 명시하면 좋겠다! -->
+	                <div class="sitter-details">
+	                    <div>돌봄 등록 일자: 📆2025.03.31.~2025.04.11.</div>
+	                    <div>돌봄 등록 시간: ⏰오전 9시 ~ 오후 2시</div>
+	                </div>
+	                <button type="button" class="btn gen-btn-small">상세 보기</button>
 	            </div>
 	        </div>
-	        <div class="gen-registered">
+	        <div class="box-preview">
 	            <div class="sitter-photo">
 	                <img src="./images/sit03.jpg" alt="시터 사진">
 	            </div>
@@ -355,9 +375,13 @@
 	                    <div><img src="" alt="🌱">신입 시터</div>	<!-- 대체 텍스트 수정 필요 -->
 	                    <div>최근 평점 ⭐4.8 (3건)</div>
 	                    <div>전체 평점 ⭐4.5 (3건)</div>
-	                    <!-- 가능 일자, 가능 시간도 명시하면 좋겠다! -->
 	                </div>
-	                <button type="button" class="btn btn-small" id="gen-details">상세 보기</button>
+	                <!-- 가능 일자, 가능 시간도 명시하면 좋겠다! -->
+	                <div class="sitter-details">
+	                    <div>돌봄 등록 일자: 📆2025.03.31.~2025.04.11.</div>
+	                    <div>돌봄 등록 시간: ⏰오전 9시 ~ 오후 2시</div>
+	                </div>
+	                <button type="button" class="btn gen-btn-small">상세 보기</button>
 	            </div>
 	        </div>
 	    </div>
