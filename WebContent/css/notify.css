@@ -2,6 +2,24 @@
 
 /* notify.css */
 
+/* ========== 전체 적용 ========== */
+@font-face
+{
+	font-family: 'NoonnuBasicGothicRegular';
+	src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noon-2410@1.0/NoonnuBasicGothicRegular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'NoonnuBasicGothicRegular';
+}
+
+
+
 /* 알림창 오버레이 스타일 */
 #notify-panel
 {
@@ -38,8 +56,6 @@
 		transform: translateY(0);		/* 위치: 기존(0)으로 */
 	}
 }
-
-/* 화살표 모양 (네이버 스타일) */
 
 #notify-panel::before 		/* ::before : 가상요소. 요소 앞에 콘텐츠 추가 */
 {
@@ -150,7 +166,7 @@
 .notify-item .notify-content
 {
 	font-size: 13px;
-	color: #555;
+	color: #333;
 	margin-bottom: 5px;
 }
 
@@ -183,45 +199,3 @@
 {
 	position: relative;
 }
-
-/* 빈 알림 스타일 */
-/* 
-.empty-notify
-{
-	padding: 30px 15px;
-	text-align: center;
-	color: #888;
-}
- */
-
-
-
-
-
-
-/* 네이버 스타일 버튼 */
-/*
-.btn_notify {
-	position: relative;
-	background: none;
-	border: none;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	padding: 0;
-	margin-left: 10px;
-}
-*//*
-
-.btn_notify::before {
-	content: '\1F514'; 종 모양 유니코드
-	font-size: 20px;
-}
-*//*
-.blind {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	clip: rect(0, 0, 0, 0);
-	overflow: hidden;
-}*/
