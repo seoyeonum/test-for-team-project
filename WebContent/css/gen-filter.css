@@ -474,7 +474,7 @@ input, select
 }
 
 
-.sitter-details, .gen-details
+.sitter-details, .gen-details, .emg-details
 {
     display: inline;
     flex-wrap: wrap;
@@ -490,14 +490,6 @@ input, select
     font-size: 14px;
     color: #333;
     white-space: nowrap;
-}
-
-.emg-details
-{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 10px;
 }
 
 .parent-id
