@@ -314,6 +314,14 @@ input, select
 	justify-content: center;
 }
 
+.btn-area-large
+{
+	width: 800px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
 
 /* ========== 체크박스 ========== */
 .checkbox-group
