@@ -12,18 +12,60 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
 
-    // 페이지가 로드되면
-    $(document).ready(function() {
-    	
-    	// parentMainFrame.html을 불러오기
-  		$.get('./parentMainFrame.html', function(data) {
-    		$('#header-container').html(data);  // #header-container에 HTML 삽입
-  		});
-  		
+	//이 페이지 로드 시,
+	document.addEventListener('DOMContentLoaded', function()
+	{
+		//객체 생성
+	    var xmlHttp = new XMLHttpRequest();
+		
+		// xmlHttp 요청 준비
+	    xmlHttp.open('GET', './parentMainFrame.html', true);
+	    
+	    // xmlHttp 서버 응답 완료 후 아래를 실행
+	    xmlHttp.onload = function() {
+	    	
+	    	// onload 요청을 성공적으로 처리 시
+	        if (xmlHttp.status == 200)
+	        {
+	        	// 업무 처리 → xmlHttp 응답 데이터를 헤더에 넣기.
+	            document.getElementById('header-container').innerHTML = xmlHttp.responseText;
+	        	
+	         	// 헤더가 로드된 후 버튼 클래스 변경
+	            // menuBtn 와 presentPage를 클래스로 가지는 엘리먼트에서 presentPage 클래스 제거
+	            var firstButton = document.querySelector('.menuBtn.presentPage');
+	            if (firstButton)
+	            {
+	                firstButton.classList.remove('presentPage');
+	            }
+	            
+	            // menuBtn 을 클래스로 가지는 엘리먼트 중
+	            var buttons = document.querySelectorAll('.menuBtn');
+	            if (buttons.length >= 2)
+	            {
+	            	// 3번째 엘리먼트에 presentPage 클래스 추가 (0부터 시작)
+	                buttons[3].classList.add('presentPage');
+	            }
+	        }
+	    };
+	    
+	    xmlHttp.send();
+	    
+	});
+	
+	$(document).ready(function()
+	{
+		$("#home").click(function()
+		{
+			// 부모 회원에게 home 은 일반 돌봄 메인
+			window.location.href = "./genMain.jsp";
+		});
+		
+		$("#myPage").click(function()
+		{
+			window.location.href = "./ChildUsed.jsp";
+		});
 	});
   
-</script>
-<script type="text/javascript">
 </script>
 </head>
 <body>
@@ -52,7 +94,7 @@
 		-->
 		<div class="sub-body-form">
 			<div class="box-req-complete">
-				<label class="complete-subject">긴급 돌봄 결제 및 신청이 완료되었습니다.</label>
+				<div class="label complete-subject">긴급 돌봄 결제 및 신청이 완료되었습니다.</div>
 	            <div class="result-info">
 	            	<div class="logo-complete">
 		                <img src="./images/logoimg.png" alt="하트 로고 이미지">
@@ -68,8 +110,8 @@
 	            </div>
 	            <br>
 	            <div class="complete-details">
-	            	<button type="button" class="btn">홈 화면으로 이동</button>
-	            	<button type="button" class="btn">예약 내역으로 이동</button>
+	            	<button type="button" id="home" class="btn">홈 화면으로 이동</button>
+	            	<button type="button" id="myPage" class="btn">예약 내역으로 이동</button>
 	            </div> 
 	        </div>
 		</div>		

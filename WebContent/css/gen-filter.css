@@ -65,7 +65,7 @@ body
 }
 
 
-label
+.label
 {
     display: block;
     margin-bottom: 8px;
@@ -75,15 +75,20 @@ label
 
 input, select
 {
-    /* width: 100%; */
+    width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
 }
 
+/*
+.sitter-form
+{
+	width: 760px;
+}
 
-
+ */
 /* ========== 박스(box) 형태 ========== */
 /* 1차 필터 박스*/
 .box-filter
@@ -389,6 +394,16 @@ input, select
 	width: 800px;
 }
 
+.gen-results-detail
+{
+	display: flex;
+	flex: 1;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	width: 600px;
+}
+
 /* 긴급 돌봄 검색 결과 */
 .emg-results
 {
@@ -453,7 +468,7 @@ input, select
 
 .sitter-details, .gen-details
 {
-    display: flex;
+    display: inline;
     flex-wrap: wrap;
     gap: 5px;
     margin-bottom: 10px;
@@ -463,12 +478,11 @@ input, select
 {
     display: flex;
     align-items: center;
-    gap: 5px;
+    padding: 2px;
     font-size: 14px;
     color: #333;
     white-space: nowrap;
 }
-
 
 .emg-details
 {
@@ -494,13 +508,13 @@ input, select
     font-weight: normal;
     font-size: 14px;
 }
-
+/* 
 .payment
 {
-	font-size: 16px;
+	font-size: 18px;
 	margin: 10px;
 }
-
+ */
 #check-payment
 {
 	height: 20px;
@@ -529,8 +543,10 @@ input, select
 
 .child-has ul
 {
-	padding: 10px;
+	padding: 5px 10px;
 	margin-left: 10px;
+	text-align: left;
+	list-style-type: disc;
 	
 }
 
