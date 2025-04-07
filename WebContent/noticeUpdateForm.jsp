@@ -7,9 +7,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>noticeDetail.jsp</title>
+<title>noticeUpdateForm.jsp</title>
 <link rel="stylesheet" type="text/css" href="css/notice.css">
-<!-- <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script> -->
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
     
     // 이 페이지 로드 시,
@@ -50,6 +50,35 @@
         
         xmlHttp.send();
         
+        
+        
+     	// 1. 수정 버튼 클릭 시 팝업 후 수정
+    	$("#update").click(function()
+    	{
+    	    alert("공지사항 수정이 완료되었습니다.");
+    	    
+    	    // 폼 제출 → noticeList.jsp
+    		$("form").submit();
+    	    
+    	});
+     	
+    	// 2. 삭제 버튼 클릭 시 확인 후 삭제
+    	$("#delete").click(function(e) {
+    	    var userConfirmed = confirm("정말 삭제하시겠습니까?");
+    	    
+    	    if (userConfirmed) {
+    	        alert("공지사항 삭제가 완료되었습니다.");
+    	        
+    	        // 폼 제출 → noticeList.jsp
+    	        $("form").submit();
+    	    }
+    	    else
+    	    {
+    	        e.preventDefault(); // 폼 제출을 막고 현재 페이지에 머물게 함
+    	        return; // 추가적인 동작을 막음
+    	    }
+    	});
+        
     });
 
 </script>
@@ -77,10 +106,10 @@
             </div>
         </div>
 	        
-		<form action="">
+		<form action="./noticeList.jsp">
 	        <div class="board-border">
+	            <!-- 게시판 헤더 -->
 		        <div class="board-detail">
-		            <!-- 게시판 헤더 -->
 		            <div class="board-list-header">
 		                <div class="board-list-cell detail-id">번호</div>
 		            </div>
@@ -116,13 +145,21 @@
 		                <div class="board-list-cell detail-type">유형</div>
 		            </div>
 		            <div class="board-list-detail">
-		            	<div class="board-list-cell detail-notice-type"><span class="badge-type notice">공지사항</span></div>
+		            	<div class="board-list-cell detail-notice-type">
+		            		<select name="" id="">
+		                		<option value="">유형</option>
+		                		<option value="1" id="type-input" selected="selected">공지사항</option>
+		                		<option value="2">이벤트</option>
+		                	</select>
+		            	</div>
 		            </div>
 		            <div class="board-list-header">
 		                <div class="board-list-cell detail-title">제목</div>
 		            </div>
 		            <div class="board-list-detail">
-		            	<div class="board-list-cell detail-notice-title">사이트 점검 안내</div>
+		            	<div class="board-list-cell detail-notice-title">
+		            		<input type="text" id="title-input" value="사이트 점검 안내"/>
+		            	</div>
 		            </div>
 		        </div>
 		        <div class="board-detail">
@@ -132,7 +169,9 @@
 		        </div>
 		        <div class="board-detail">
 		            <div class="board-list-detail">
-		            	<div class="board-list-cell detail-notice-content">4월 25일 02:00 ~ 04:00 사이트 점검 예정입니다.</div>
+		            	<div class="board-list-cell detail-notice-content">
+		            		<textarea id="content-input">4월 25일 02:00 ~ 04:00 사이트 점검 예정입니다.</textarea>
+		            	</div>
 		            </div>
 		        </div>
 	        </div>

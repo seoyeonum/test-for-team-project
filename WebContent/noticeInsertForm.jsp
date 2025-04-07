@@ -7,9 +7,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>noticeDetail.jsp</title>
+<title>noticeInsertForm.jsp</title>
 <link rel="stylesheet" type="text/css" href="css/notice.css">
-<!-- <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script> -->
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
     
     // 이 페이지 로드 시,
@@ -50,6 +50,34 @@
         
         xmlHttp.send();
         
+        
+        
+     	// 1. 등록 버튼 클릭 시 팝업 후 수정
+    	$("#insert").click(function()
+    	{
+    	    alert("공지사항 수정이 완료되었습니다.");
+    	    
+    	    // 폼 제출 → noticeList.jsp
+    		$("form").submit();
+    	    
+    	});
+     	
+    	// 2. 초기화 버튼 클릭 시 확인 후 초기화
+    	$("#reset").click(function(e)
+    	{
+    	    var userConfirmed = confirm("정말 초기화 하시겠습니까?");
+    	    
+    	    if (userConfirmed)
+    	    {
+    	        alert("textarea 초기화 완료");
+    	    }
+    	    else
+    	    {
+    	        e.preventDefault(); // 폼 제출을 막고 현재 페이지에 머물게 함
+    	        return; // 추가적인 동작을 막음
+    	    }
+    	});
+        
     });
 
 </script>
@@ -72,29 +100,14 @@
                 <button type="button" id="back" class="btn">목록으로</button>
             </div>
             <div class="search-box">
-                <button type="button" id="update" class="btn">수정</button>
-                <button type="button" id="delete" class="btn">삭제</button>
+                <button type="button" id="insert" class="btn">등록</button>
+                <button type="button" id="reset" class="btn">초기화</button>
             </div>
         </div>
 	        
-		<form action="">
+		<form action="./noticeList.jsp">
 	        <div class="board-border">
-		        <div class="board-detail">
-		            <!-- 게시판 헤더 -->
-		            <div class="board-list-header">
-		                <div class="board-list-cell detail-id">번호</div>
-		            </div>
-		            <div class="board-list-detail">
-		            	<div class="board-list-cell detail-notice-id">5</div>
-		            </div>
-		            <div class="board-list-header">
-		                <div class="board-list-cell detail-views">조회수</div>
-		            </div>
-		            <div class="board-list-detail">
-		            	<div class="board-list-cell detail-notice-views">128</div>
-		            </div>
-		        </div>
-		         
+	            <!-- 게시판 헤더 -->
 		        <div class="board-detail">
 		        	<div class="board-list-header">
 		                <div class="board-list-cell detail-author">작성자</div>
@@ -116,13 +129,21 @@
 		                <div class="board-list-cell detail-type">유형</div>
 		            </div>
 		            <div class="board-list-detail">
-		            	<div class="board-list-cell detail-notice-type"><span class="badge-type notice">공지사항</span></div>
+		            	<div class="board-list-cell detail-notice-type">
+		            		<select name="" id="">
+		                		<option value="">유형</option>
+		                		<option value="1" id="type-input" selected="selected">공지사항</option>
+		                		<option value="2">이벤트</option>
+		                	</select>
+		            	</div>
 		            </div>
 		            <div class="board-list-header">
 		                <div class="board-list-cell detail-title">제목</div>
 		            </div>
 		            <div class="board-list-detail">
-		            	<div class="board-list-cell detail-notice-title">사이트 점검 안내</div>
+		            	<div class="board-list-cell detail-notice-title">
+		            		<input type="text" id="title-input" placeholder="(제목을 입력하세요./최대 16자 입력 가능)"/>
+		            	</div>
 		            </div>
 		        </div>
 		        <div class="board-detail">
@@ -132,7 +153,9 @@
 		        </div>
 		        <div class="board-detail">
 		            <div class="board-list-detail">
-		            	<div class="board-list-cell detail-notice-content">4월 25일 02:00 ~ 04:00 사이트 점검 예정입니다.</div>
+		            	<div class="board-list-cell detail-notice-content">
+		            		<textarea id="content-input" placeholder="(내용을 입력하세요./최대 1,000자 입력 가능)"></textarea>
+		            	</div>
 		            </div>
 		        </div>
 	        </div>

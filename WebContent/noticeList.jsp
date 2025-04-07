@@ -78,6 +78,7 @@
                 </select>
                 <input type="text" placeholder="검색어를 입력하세요">
                 <button type="button" class="btn">검색</button>
+                <button type="button" class="btn">등록</button>
             </div>
         </div>
         
