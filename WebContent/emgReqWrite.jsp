@@ -2,6 +2,9 @@
 <% 
 	request.setCharacterEncoding("UTF-8");
 	String cp = request.getContextPath();
+	
+	// 기존 창에서 전달된 매개변수 받기
+	String parentId = request.getParameter("parentId");
 %>
 <!DOCTYPE html>
 <html>
@@ -9,7 +12,6 @@
 <meta charset="UTF-8">
 <title>emgReqWrite.jsp</title>
 <link rel="stylesheet" type="text/css" href="css/gen-filter.css">
-<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
 
@@ -154,7 +156,7 @@
 				
 		        <div class="btn-area-large row-items">
 			        <button type="button" class="btn gen-btn-small" id="home">홈으로</button>
-			        <button type="button" class="btn gen-btn-small" id="emg-request">다음으로</button>
+			        <button type="submit" class="btn gen-btn-small" id="emg-request">다음으로</button>
 			    </div>
 		    </form>
 		</div>

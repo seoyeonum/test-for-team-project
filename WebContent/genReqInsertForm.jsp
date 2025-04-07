@@ -129,7 +129,7 @@
     	    // 체크박스 확인
     	    if (!$("#check-payment").is(":checked"))
     	    {
-    	        alert("결제 진행을 확인해주십시오.");
+    	        alert("결제 진행 확인을 위해 체크박스 체크 바랍니다.");
     	        return;
     	    }
     	    
@@ -181,7 +181,7 @@
 		</div>
 		
 		<div class="sub-body-form">
-			<form action="./genPayInsertForm.jsp">
+			<form action="./genPayResult.jsp">
 			
 				<!-- 1. 신청하는 시터님 관련 정보 -->
 				<!--

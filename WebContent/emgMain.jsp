@@ -71,7 +71,7 @@
 			<div class="sub-subject">
 				<h2>긴급 돌봄 요청 리스트</h2>
 			</div>
-			긴급돌봄 list 여기에 출력하기
+			긴급돌봄 list <a href="./emgReqList.jsp">여기에</a> 출력하기
 			
 		</div>
 		

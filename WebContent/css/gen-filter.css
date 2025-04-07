@@ -402,7 +402,7 @@ input, select
 	width: 800px;
 }
 
-.gen-results-detail
+.gen-results-detail, .emg-results-detail
 {
 	display: flex;
 	flex: 1;

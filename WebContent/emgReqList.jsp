@@ -18,6 +18,14 @@
     		$('#header-container').html(data);  // #header-container에 HTML 삽입
   		});
 	});
+    
+ 	// 돌봄 신청 클릭 시 새 창(emgRegInsertForm.jsp) 열기
+    function openDetailWindow(parentId)
+ 	{
+        // 두 번째 파라미터 : '_blank' → 새 창 열기
+        // 세 번째 파라미터 : 창 옵션 (크기, 스크롤바 등)
+        window.open('./emgRegInsertForm.jsp?parentId=' + parentId, '_blank', 'width=640,height=500');
+    }
 
 </script>
 </head>
@@ -45,10 +53,10 @@
 		
 		<div class="sub-body">
 			<div class="emg-results">
-		    
-		    
-		        <% for (int i=0; i<10; i++)
-		        {%>
+		    	
+		    	<% for (int i=0; i<10; i++)
+		        {
+		        %>
 		        <!-- 긴급 돌봄 각 등록 건 1 -->
 		        <div class="box-emg">
 		            <div class="emg-info">
@@ -88,7 +96,7 @@
 	                    	</div>
 	                    </div>
 	                     -->
-		                <button type="button" class="btn emg-btn-small">지원하기</button>
+		                <button type="button" class="btn emg-btn-small" onclick="openDetailWindow(1)">지원하기</button>
 	                </div>
 	            </div>
 		        
@@ -130,7 +138,7 @@
 	                    	</div>
 	                    </div>
 	                    
-		                <button type="button" class="btn emg-btn-small">지원하기</button>
+		                <button type="button" class="btn emg-btn-small" onclick="openDetailWindow(2)">지원하기</button>
 	                </div>
 	            </div>
 	            <!-- 긴급 돌봄 각 등록 건 3 -->
@@ -173,7 +181,7 @@
 	                    </div>
 	                     -->
 	                     
-		                <button type="button" class="btn emg-btn-small">지원하기</button>
+		                <button type="button" class="btn emg-btn-small" onclick="openDetailWindow(3)">지원하기</button>
 	                </div>
 	            </div>
 	            <%

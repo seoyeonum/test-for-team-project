@@ -53,6 +53,116 @@
 	    xmlHttp.send();
 	});
 
+	// 각 기능 - jQuery로 처리
+    // 페이지가 로드되면
+    $(document).ready(function()
+    {
+    	// 아이 정보는 따로 토글 처리 X
+    	/* 
+    	// 1. 토글 처리 - 신청 시터 정보
+  		$("#toggle-sitter-req").click(function() {
+        	$("#sitter-req-hidden").slideToggle(300);
+    	});
+    	 */
+  		// 2. 입력 액션 시 글자 수 업데이트
+  		$("#msg-input").on('input', function()
+  		{
+  			textCount();
+  		});
+  		
+  		// 3. 다시 작성 버튼 클릭 시(event) 메시지 입력란만 초기화
+    	$("#msg-reset").click(function(event)
+    	{
+    		// 폼 전체 초기화 방지
+    		event.preventDefault();
+    		
+    		// 메시지 입력란만 초기화
+    		$("#msg-input").val('');
+    		
+    		// 글자 수 업데이트
+    		textCount();
+    	});
+  		
+    	// 4. 초기화 버튼 클릭 시(event) 포인트 입력란만 초기화
+    	$("#point-reset").click(function()
+    	{
+    		// 메시지 입력란, 차감액 부분만 초기화
+    		$("#point-input").val('');
+    		$("#point-spend").text(0);
+    		
+    		// 최종 비용 업데이트
+    		updateFinalPrice();
+    		
+    	});
+    	
+    	
+    	// 5. 적용 버튼 클릭 시(event) 포인트 차감액 변동
+    	$("#point-use").click(function()
+    	{
+    		// 입력한 포인트 값 가져오기
+    		// 『||』: 앞의 값이 없다면 || 뒤의 값 사용
+    		var pointInput = parseInt($("#point-input").val()) || 0;
+    		var maxPoint = <%= point %>;
+    		
+    		// 유효성 검사
+    		if (pointInput < 100 && pointInput > 0)
+    		{
+    			alert("최소 100원부터 사용 가능합니다.");
+    			return;
+    		}
+    		
+    		if (pointInput > maxPoint)
+    		{
+    			alert("보유 포인트보다 많은 금액을 사용할 수 없습니다.");
+    			return;
+    		}
+    		
+    		// 포인트 차감액 변동 (span → val() (X) / .text() (O))
+    		$("#point-spend").text(pointInput);
+    		
+    		// 최종 금액 업데이트
+    		updateFinalPrice();
+    	});
+    	
+    	
+    	// 6. 결제 진행 버튼 클릭 시 체크박스 확인 후 페이지 이동
+    	$("#confirm-payment").click(function()
+    	{
+    	    // 체크박스 확인
+    	    if (!$("#check-payment").is(":checked"))
+    	    {
+    	        alert("결제 진행 확인을 위해 체크박스 체크 바랍니다.");
+    	        return;
+    	    }
+    	    
+    	    // 체크되어 있다면 폼 제출 → genPayInsertForm.jsp
+    	    $("form").submit();
+    	});
+    	
+    	
+	});
+	
+ 	// 실시간 글자 수 카운트 함수
+	function textCount()
+ 	{
+		var inputText = $("#msg-input").val().length;
+		var maxLength = 160;
+		$("#text-count").text(inputText + " / " + maxLength + "자");
+	}
+	
+ 	// 결제 금액 계산 함수
+ 	function calcPrice()
+ 	{
+   	    var basePrice = 25200; 								// 기본 비용
+   	    var pointUsed = parseInt($("#point-spend").text()); // 사용 포인트
+   	    var finalPrice = basePrice - pointUsed; 			// 최종 비용
+   	    
+   	    // 최종 비용 업데이트
+   	    // toLocaleString: 화폐 단위에 , 추가
+   	    $("#final-price").text(finalPrice.toLocaleString());
+   	}
+	
+	
 </script>
 </head>
 <body>
@@ -73,7 +183,7 @@
 		</div>
 		
 		<div class="sub-body-form">
-			<form action="./emgPayInsertForm.jsp">
+			<form action="./emgRegResult.jsp">
 			
 				<!-- 3. 돌봄 요청 정보 -->
 			    <div class="box-req"> 	

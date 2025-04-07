@@ -419,7 +419,7 @@
 		                	<div>돌봄 등록 일자: 📆2025.03.31.~2025.04.11.</div>
 		                    <div>돌봄 등록 시간: ⏰오전 9시 ~ 오후 2시</div>
 		                </div>
-		                <button type="submit" class="btn gen-btn-small" onclick="openDetailWindow(3)">돌봄 신청</button>
+		                <button type="button" class="btn gen-btn-small" onclick="openDetailWindow(3)">돌봄 신청</button>
 		            </div>
 		        </div>
 		    <!-- </form> -->
