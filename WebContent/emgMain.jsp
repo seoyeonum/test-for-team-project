@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% 
 	request.setCharacterEncoding("UTF-8");
 	String cp = request.getContextPath();
@@ -12,43 +13,24 @@
 <!-- <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script> -->
 <script type="text/javascript">
 
-    // 이 페이지 로드 시,
+    // 이 페이지 로드 시, → jquery 빼고 해보자.
     document.addEventListener('DOMContentLoaded', function()
     {
-    	//객체 생성
-        var xmlHttp = new XMLHttpRequest();
-    	
-    	// xmlHttp 요청 준비
-        xmlHttp.open('GET', './sitterMainFrame.html', true);
+    	// 헤더가 로드된 후 버튼 클래스 변경
+        // menuBtn 와 presentPage를 클래스로 가지는 엘리먼트에서 presentPage 클래스 제거
+        var firstButton = document.querySelector('.menuBtn.presentPage');
+        if (firstButton)
+        {
+            firstButton.classList.remove('presentPage');
+        }
         
-        // xmlHttp 서버 응답 완료 후 아래를 실행
-        xmlHttp.onload = function() {
-        	
-        	// onload 요청을 성공적으로 처리 시
-            if (xmlHttp.status == 200)
-            {
-            	// 업무 처리 → xmlHttp 응답 데이터를 헤더에 넣기.
-                document.getElementById('header-container').innerHTML = xmlHttp.responseText;
-            	
-             	// 헤더가 로드된 후 버튼 클래스 변경
-                // menuBtn 와 presentPage를 클래스로 가지는 엘리먼트에서 presentPage 클래스 제거
-                var firstButton = document.querySelector('.menuBtn.presentPage');
-                if (firstButton)
-                {
-                    firstButton.classList.remove('presentPage');
-                }
-                
-                // menuBtn 을 클래스로 가지는 엘리먼트 중
-                var buttons = document.querySelectorAll('.menuBtn');
-                if (buttons.length >= 2)
-                {
-                	// 0번째 엘리먼트에 presentPage 클래스 추가 (0부터 시작)
-                    buttons[0].classList.add('presentPage');
-                }
-            }
-        };
-        
-        xmlHttp.send();
+        // menuBtn 을 클래스로 가지는 엘리먼트 중
+        var buttons = document.querySelectorAll('.menuBtn');
+        if (buttons.length >= 2)
+        {
+        	// 0번째 엘리먼트에 presentPage 클래스 추가 (0부터 시작)
+            buttons[0].classList.add('presentPage');
+        }
     });
 
 </script>
@@ -56,7 +38,9 @@
 <body>
 
 <!-- sitterMainFrame.html을 삽입할 위치 -->
-<div id="header-container"></div>
+<!-- <div id="header-container"></div> -->
+<c:import url="./sitterMainFrame.html" charEncoding="UTF-8" />
+<!-- → jstl import 구문으로 변경 -->
 
 <div id="body-container">
 	<div id="wrapper-header">
