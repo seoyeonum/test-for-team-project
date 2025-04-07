@@ -82,7 +82,7 @@ body
 .search-box select
 {
     border-radius: 4px 0 0 4px;
-    background-color: #fff0ee;
+    /* background-color: #fff0ee; */
 }
 
 .search-box input
@@ -99,6 +99,7 @@ body
     color: white;
     border: none;
     padding: 10px 15px;
+    margin: 0px 2px;
     border-radius: 5px;
     cursor: pointer;					/* 마우스 커서가 손 모양(포인터) */
     font-size: 14px;
@@ -115,27 +116,36 @@ body
 
 /* ========== 게시글 리스트 영역 ========== */
 
-.board-list {
+.board-list
+{
     width: 100%;
     margin-bottom: 20px;
 }
 
-.board-list-header {
+.board-list-header
+{
     display: flex;
     background-color: #fff0ee;
-    border-top: 2px solid #e28c99;
-    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #e28c99;
+    /* border-bottom: 1px solid #e28c99; */
     padding: 12px 0;
     font-weight: bold;
     text-align: center;
 }
 
-.board-list-item {
+.board-list-item, .board-list-detail
+{
     display: flex;
     border-bottom: 1px solid #fff0ee;
     padding: 12px 0;
     text-align: center;
     transition: background-color 0.2s;
+}
+
+.board-list-detail
+{
+    border-top: 1px solid #e28c99;
+    /* border-bottom: 1px solid #e28c99; */
 }
 
 .board-list-item:hover
@@ -151,6 +161,23 @@ body
     justify-content: center;
 }
 
+
+.board-detail
+{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    /* margin-bottom: 20px; */
+    width: 1100px;
+}
+
+.board-border
+{
+	border-top: 2px solid #e28c99;
+    border-bottom: 2px solid #e28c99;
+}
+
+
 .id { width: 8%; }
 .type { width: 12%; }
 .title
@@ -161,6 +188,37 @@ body
 .author { width: 12%; }
 .views { width: 10%; }
 .date { width: 15%; }
+
+
+
+
+.detail-id { width: 200px; }
+.detail-type { width: 200px; }
+.detail-title
+{ 
+    width: 200px; 
+    justify-content: center;
+}
+.detail-author { width: 200px; }
+.detail-views { width: 200px; }
+.detail-date { width: 200px; }
+.detail-content { width: 1100px; }
+
+
+
+.detail-notice-id { width: 200px; }
+.detail-notice-type { width: 200px; }
+.detail-notice-title
+{ 
+    width: 500px; 
+    justify-content: center;
+}
+.detail-notice-author { width: 200px; }
+.detail-notice-views { width: 500px; }
+.detail-notice-date { width: 500px; }
+.detail-notice-content  { width: 1100px; }
+
+
 
 .badge-type
 {
