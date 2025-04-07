@@ -13,8 +13,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
 	
-	// 토글 기능 - jQuery로 처리
-    // 페이지가 로드되면
+	// 페이지가 로드되면
     $(document).ready(function()
     {
     	// 헤더가 로드된 후 버튼 클래스 변경
@@ -29,10 +28,85 @@
         var buttons = document.querySelectorAll('.menuBtn');
         if (buttons.length >= 2)
         {
-        	// 3번째 엘리먼트에 presentPage 클래스 추가 (0부터 시작)
-            buttons[3].classList.add('presentPage');
+        	// 0번째 엘리먼트에 presentPage 클래스 추가 (0부터 시작)
+            buttons[0].classList.add('presentPage');
         }
     	
+		//-------------------------------
+        
+        // 날짜 선택 제한
+    	
+     	// Date() → 오늘 날짜 객체 생성
+        var today = new Date();
+        
+        // 오늘로부터 4일 후 (최소 날짜)
+        var minDate = new Date(today);
+        minDate.setDate(today.getDate() + 4);
+        
+        // 오늘로부터 34일 후 (최대 날짜)
+        var maxDate = new Date(today);
+        maxDate.setDate(today.getDate() + 34);
+        
+        // 최소, 최대 날짜 설정
+        var minDateStr = formatDate(minDate);
+        var maxDateStr = formatDate(maxDate);
+        
+        // 시작 날짜와 종료 날짜 입력 → min, max 속성 설정
+        $('#date-start').attr('min', minDateStr);
+        $('#date-start').attr('max', maxDateStr);
+        $('#date-end').attr('min', minDateStr);
+        $('#date-end').attr('max', maxDateStr);
+        
+        // 시작 날짜 선택 시 종료 날짜는 최소값 표기
+        $('#date-start').on('change', function()
+        {
+            var startDate = $(this).val();
+            $('#date-end').attr('min', startDate);
+            
+            // 만약 종료 날짜가 새로운 시작 날짜보다 이전이면 종료 날짜를 시작 날짜와 같게 설정
+            if ($('#date-end').val() < startDate)
+            {
+                $('#date-end').val(startDate);
+            }
+        });
+        
+        
+        
+		//-------------------------------
+        
+        // 시간 선택 제한
+        
+     	// 경고 메시지 요소 기본적으로 숨기기
+        $('#time-warning').hide();
+        
+        // 시작 시간, 종료 시간 변경 시 검사 실행
+        $('#time-start').on('change', checkTimeDiff);
+        $('#time-end').on('change', checkTimeDiff);
+        
+        // 폼 제출 시 유효성 검사
+        $('#primary-filter-form').on('submit', function(event)
+        {
+            // 시간 차이 재확인
+            if ($('#time-start').val() && $('#time-end').val())
+            {
+                var startHour = parseInt($('#time-start').val());
+                var endHour = parseInt($('#time-end').val());
+                var hourDiff = endHour - startHour;
+                
+                // 8시간 초과면 제출 막기
+                if (hourDiff > 8)
+           		{
+                	// 경고 팝업
+                	alert('일반 돌봄 하루 최대 이용시간은 8시간입니다.');
+                	event.preventDefault(); // 폼 제출 막기
+	            }
+	        }
+        });
+        
+        
+        //-------------------------------
+        
+        
     	// 토글 처리 - 시터 등급
   		$("#toggle-grade").click(function() {
         	//$("#checkbox-grade").toggle();			// 일반 토글 모션 처리
@@ -64,9 +138,57 @@
         	$("#range-price").slideToggle(500);
     	});
   		
+	  	// 가격 range 값 변경 시 current-price로 표시
+  	    $('input[name="price"]').on('input', function()
+  	    {
+  	        var value = $(this).val();
+  	        
+  	        // 숫자 단위 구분자 포맷으로 전환
+  	        var formatValue = Number(value).toLocaleString('ko-KR');
+  	        $('#current-price').text(formatValue + '원');
+  	    });
+  	    
+  	    // 가격 초기 설정
+  	    var initialPrice = $('input[name="price"]').val();
+  	    var formattedInitialPrice = Number(initialPrice).toLocaleString('ko-KR');
+  	    $('#current-price').text(formattedInitialPrice + '원');
 	});
 	
- 	// 돌봄 신청 클릭 시 새 창(genRegDetail.jsp) 열기
+ 	// 함수 1.시간 차이 검사 함수
+    function checkTimeDiff()
+    {
+        // 두 시각이 모두 선택되었다면,
+        if ($('#time-start').val() && $('#time-end').val())
+        {
+            // 시간 계산
+            var startHour = parseInt($('#time-start').val());
+            var endHour = parseInt($('#time-end').val());
+            var hourDiff = endHour - startHour;
+            
+            // 시간 차가 8시간 초과라면,
+            if (hourDiff > 8)
+            {
+                // 경고 표시
+                $('#time-warning').show();
+            }
+            else
+            {
+                // 경고 숨기기
+                $('#time-warning').hide();
+            }
+        }
+    }
+	
+ 	// 함수 2.날짜 → YYYY-MM-DD 형식으로 변환
+    function formatDate(date)
+    {
+        var year = date.getFullYear();
+        var month = String(date.getMonth() + 1).padStart(2, '0');		//-- LPAD 와 같다.
+        var day = String(date.getDate()).padStart(2, '0');
+        return year + '-' + month + '-' + day;
+    }
+ 	
+ 	// 함수 3.돌봄 신청 클릭 시 새 창(genRegDetail.jsp) 열기
     function openDetailWindow(sitterId)
  	{
         // 두 번째 파라미터 : '_blank' → 새 창 열기
@@ -81,6 +203,7 @@
 <!-- parentMainFrame.html을 삽입할 위치 -->
 <!-- <div id="header-container"></div> -->
 <c:import url="./parentMainFrame.html" charEncoding="UTF-8" />
+<!-- → jstl import 구문으로 변경 -->
 
 <div id="body-container">
 	<div id="wrapper-header">
@@ -329,11 +452,11 @@
 					<div class="label" id="toggle-price">전체 돌봄 비용</div>
 			        <div class="range-group" id="range-price">
 			        	<label class="range-label">
-							<input type="range" name="price" min="0" max="41092240" step="10000" value="1340000">
+							<input type="range" name="price" min="0" max="1082240" step="50000" value="1340000">
 						</label>
 						<label class="range-label">
 				            <span>0</span>
-				            <span id="current-price">1,340,000원</span>
+				            <span id="current-price">0원</span>
 				            <span>MAX</span>
 			            </label>
 			        </div>

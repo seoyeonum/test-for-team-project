@@ -9,58 +9,160 @@
 <meta charset="UTF-8">
 <title>genMain.jsp</title>
 <link rel="stylesheet" type="text/css" href="css/gen-filter.css">
-<!-- <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script> -->
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
 
     // 페이지가 로드되면 parentMainFrame.html을 불러오기
     // jQuery
     /* 
-    $(document).ready(function() {
-  		$.get('./parentMainFrame.html', function(data) {
-    		$('#header-container').html(data);  // #header-container에 HTML 삽입
-  		});
+    $(document).ready(function()
+    {
+    	// 헤더가 로드된 후 버튼 클래스 변경
+        // menuBtn 와 presentPage를 클래스로 가지는 엘리먼트에서 presentPage 클래스 제거
+        var firstButton = document.querySelector('.menuBtn.presentPage');
+        if (firstButton)
+        {
+            firstButton.classList.remove('presentPage');
+        }
+        
+        // menuBtn 을 클래스로 가지는 엘리먼트 중
+        var buttons = document.querySelectorAll('.menuBtn');
+        if (buttons.length >= 2)
+        {
+        	// 0번째 엘리먼트에 presentPage 클래스 추가 (0부터 시작)
+            buttons[0].classList.add('presentPage');
+        }
+    	
+    	
 	});
     */
     
     // 이 페이지 로드 시,
     document.addEventListener('DOMContentLoaded', function()
     {
-    	//객체 생성
-        var xmlHttp = new XMLHttpRequest();
+    	// 헤더가 로드된 후 버튼 클래스 변경
+        // menuBtn 와 presentPage를 클래스로 가지는 엘리먼트에서 presentPage 클래스 제거
+        var firstButton = document.querySelector('.menuBtn.presentPage');
+        if (firstButton)
+        {
+            firstButton.classList.remove('presentPage');
+        }
+        
+        // menuBtn 을 클래스로 가지는 엘리먼트 중
+        var buttons = document.querySelectorAll('.menuBtn');
+        if (buttons.length >= 2)
+        {
+        	// 0번째 엘리먼트에 presentPage 클래스 추가 (0부터 시작)
+            buttons[0].classList.add('presentPage');
+        }
+        
+        //-------------------------------
+        
+        // 날짜 선택 제한
     	
-    	// xmlHttp 요청 준비
-        xmlHttp.open('GET', './parentMainFrame.html', true);
+     	// Date() → 오늘 날짜 객체 생성
+        var today = new Date();
         
-        // xmlHttp 서버 응답 완료 후 아래를 실행
-        xmlHttp.onload = function() {
-        	
-        	// onload 요청을 성공적으로 처리 시
-            if (xmlHttp.status == 200)
+        // 오늘로부터 4일 후 (최소 날짜)
+        var minDate = new Date(today);
+        minDate.setDate(today.getDate() + 4);
+        
+        // 오늘로부터 34일 후 (최대 날짜)
+        var maxDate = new Date(today);
+        maxDate.setDate(today.getDate() + 34);
+        
+        // 최소, 최대 날짜 설정
+        var minDateStr = formatDate(minDate);
+        var maxDateStr = formatDate(maxDate);
+        
+        // 시작 날짜와 종료 날짜 입력 → min, max 속성 설정
+        $('#date-start').attr('min', minDateStr);
+        $('#date-start').attr('max', maxDateStr);
+        $('#date-end').attr('min', minDateStr);
+        $('#date-end').attr('max', maxDateStr);
+        
+        // 시작 날짜 선택 시 종료 날짜는 최소값 표기
+        $('#date-start').on('change', function()
+        {
+            var startDate = $(this).val();
+            $('#date-end').attr('min', startDate);
+            
+            // 만약 종료 날짜가 새로운 시작 날짜보다 이전이면 종료 날짜를 시작 날짜와 같게 설정
+            if ($('#date-end').val() < startDate)
             {
-            	// 업무 처리 → xmlHttp 응답 데이터를 헤더에 넣기.
-                document.getElementById('header-container').innerHTML = xmlHttp.responseText;
-            	
-             	// 헤더가 로드된 후 버튼 클래스 변경
-                // menuBtn 와 presentPage를 클래스로 가지는 엘리먼트에서 presentPage 클래스 제거
-                var firstButton = document.querySelector('.menuBtn.presentPage');
-                if (firstButton)
-                {
-                    firstButton.classList.remove('presentPage');
-                }
-                
-                // menuBtn 을 클래스로 가지는 엘리먼트 중
-                var buttons = document.querySelectorAll('.menuBtn');
-                if (buttons.length >= 2)
-                {
-                	// 0번째 엘리먼트에 presentPage 클래스 추가 (0부터 시작)
-                    buttons[0].classList.add('presentPage');
-                }
+                $('#date-end').val(startDate);
             }
-        };
+        });
         
-        xmlHttp.send();
+        
+        
+		//-------------------------------
+        
+        // 시간 선택 제한
+        
+     	// 경고 메시지 요소 기본적으로 숨기기
+        $('#time-warning').hide();
+        
+        // 시작 시간, 종료 시간 변경 시 검사 실행
+        $('#time-start').on('change', checkTimeDiff);
+        $('#time-end').on('change', checkTimeDiff);
+        
+        // 폼 제출 시 유효성 검사
+        $('#primary-filter-form').on('submit', function(event)
+        {
+            // 시간 차이 재확인
+            if ($('#time-start').val() && $('#time-end').val())
+            {
+                var startHour = parseInt($('#time-start').val());
+                var endHour = parseInt($('#time-end').val());
+                var hourDiff = endHour - startHour;
+                
+                // 8시간 초과면 제출 막기
+                if (hourDiff > 8)
+           		{
+                	// 경고 팝업
+                	alert('일반 돌봄 하루 최대 이용시간은 8시간입니다.');
+                	event.preventDefault(); // 폼 제출 막기
+	            }
+	        }
+        });
+        
     });
-
+    
+ 	// 날짜 → YYYY-MM-DD 형식으로 변환
+    function formatDate(date)
+    {
+        var year = date.getFullYear();
+        var month = String(date.getMonth() + 1).padStart(2, '0');		//-- LPAD 와 같다.
+        var day = String(date.getDate()).padStart(2, '0');
+        return year + '-' + month + '-' + day;
+    }
+ 	
+ 	// 시간 차이 검사 함수
+    function checkTimeDiff()
+    {
+        // 두 시각이 모두 선택되었다면,
+        if ($('#time-start').val() && $('#time-end').val())
+        {
+            // 시간 계산
+            var startHour = parseInt($('#time-start').val());
+            var endHour = parseInt($('#time-end').val());
+            var hourDiff = endHour - startHour;
+            
+            // 시간 차가 8시간 초과라면,
+            if (hourDiff > 8)
+            {
+                // 경고 표시
+                $('#time-warning').show();
+            }
+            else
+            {
+                // 경고 숨기기
+                $('#time-warning').hide();
+            }
+        }
+    }
+ 
 </script>
 </head>
 <body>
