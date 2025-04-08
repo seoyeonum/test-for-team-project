@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% 
 	request.setCharacterEncoding("UTF-8");
 	String cp = request.getContextPath();
@@ -72,7 +73,9 @@
 <body>
 
 <!-- sitterMainFrame.html을 삽입할 위치 -->
-<div id="header-container"></div>
+<div id="header-container">
+	<c:import url="./sitterMainFrame.html" charEncoding="UTF-8" />
+</div>
 
 <div id="body-container">
 	<div id="wrapper-header">

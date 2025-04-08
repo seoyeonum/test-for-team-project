@@ -201,9 +201,9 @@
 <body>
 
 <!-- parentMainFrame.html을 삽입할 위치 -->
-<!-- <div id="header-container"></div> -->
-<c:import url="./parentMainFrame.html" charEncoding="UTF-8" />
-<!-- → jstl import 구문으로 변경 -->
+<div id="header-container">
+	<c:import url="./parentMainFrame.html" charEncoding="UTF-8" />
+</div>
 
 <div id="body-container">
 	<div id="wrapper-header">
